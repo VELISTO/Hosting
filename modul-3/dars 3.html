@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Example</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .menu img {
+      width: 30px;
+      margin-right: 20px;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 2px white;
+      cursor: pointer;
+    }
+
+    .section-title {
+      background-color: white;
+      color: black;
+      font-size: 28px;
+      text-align: center;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 10px 40px;
+      border-radius: 20px;
+      font-weight: bold;
+      box-shadow: 3px 5px 5px #444;
+    }
+
+    .position-demo {
+      background-image: url('https://avatars.mds.yandex.net/i?id=39b45a36ae73852f588babeb9f06e22d0a4353a0-5221624-images-thumbs&n=13');
+      background-size: cover;
+      background-repeat: none;
+      
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 40px auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    .relative-block {
+      background-image: url("https://coddyschool.com/upload/files/blog/2CSS.png")  no-repeat center center/cover;
+      position: relative;
+      width: 130px;
+      height: 130px;
+      background-color: lime;
+      text-align: center;
+      line-height: 130px;
+      font-weight: bold;
+      color: red;
+      font-size: 16px;
+      box-shadow: 0 0 15px lime;
+    }
+
+    .relative-block.round {
+      border-radius: 60px;
+    }
+
+    .absolute-inner {
+      position: absolute;
+      top: -40px;
+      left: 15px;
+      width: 100px;
+      height: 60px;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px red;
+    }
+
+    .info-section {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .info-card {
+      background-color: #822e2e;
+      width: 220px;
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #400;
+      margin-bottom: 100px;
+    }
+
+    .info-card h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: white;
+    }
+
+    .info-card p {
+      font-size: 13px;
+    }
+
+    .white-box {
+      background: white;
+      height: 90px;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .white-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="menu">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo">
+    </div>
+    <div>
+      <ul>
+      <li>relative</li>
+      <li>absolute</li>
+      <li>fixed</li>
+      <li>sticky</li>
+      <li>z-index</li>
+    </ul>
+    </div>
+  </nav>
+
+  <div class="section-title">Position</div>
+
+  <div class="position-demo">
+    <div class="relative-block">
+      <div class="absolute-inner">absolute</div>
+      relative
+    </div>
+    <div class="relative-block round">
+      <div class="absolute-inner">absolute</div>
+      relative
+    </div>
+    <div class="relative-block">
+      <div class="absolute-inner">absolute</div>
+      relative
+    </div>
+  </div>
+
+  <div class="section-title">Information</div>
+  <div class="info-section">
+    <div class="info-card">
+      <h2>Static</h2>
+      <p>Position default holati static<br>bu holatda top, left, right,<br>bottom, z-index ishlamaydi</p>
+    </div>
+    <div class="info-card">
+      <h2>Relative</h2>
+      <div class="white-box">
+        <img src="https://i.pinimg.com/originals/42/b9/a5/42b9a5d01f59988105a3193d68d648a6.png" alt="">
+      </div>
+    </div>
+    <div class="info-card">
+      <h2>Absolute</h2>
+      <div class="white-box">
+        <img src="https://i.pinimg.com/originals/42/b9/a5/42b9a5d01f59988105a3193d68d648a6.png" alt="">
+      </div>
+    </div>
+  </div>
+  <nav class="menu">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo">
+    </div>
+    <div>
+      <ul>
+      <li>Top</li>
+      <li>Bottom</li>
+      <li>Right</li>
+      <li>Left</li>
+    </ul>
+    </div>
+  </nav>
+
+</body>
+</html>
