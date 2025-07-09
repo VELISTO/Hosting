@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: whitesmoke;
+        }
+        header {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: auto;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0 30px 0;
+            box-shadow: 0 0 10px black;
+        }
+        .logo img {
+            width: 170px;
+            margin-left: 140px;
+        }
+        .catalog {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 100px;
+        }
+        .catalog button {
+            background-color: white;
+            color: rgb(122, 122, 122);
+            width: auto;
+            height: 50px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s linear;
+        }
+        .catalog button:hover {
+            transform: scale(1.1);
+            border-bottom: 4px double orangered;
+            border-radius: 10px;
+            color: orangered;
+        }
+        .create button {
+            background-color: white;
+            color: orangered;
+            font-size: 24px;
+            width: auto;
+            border: 3px solid orangered;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .create button:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(237, 63, 0);
+            border-color: rgb(237, 63, 0);
+            box-shadow: 2px 2px 10px rgb(195, 195, 195);
+        }
+        .quadro img {
+            width: 70px;
+            margin-right: 140px;
+        }
+
+        .smth {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 80px 0 80px;
+            margin-top: 120px;
+            font-family: sans-serif;
+        }
+        .smth h1 {
+            font-size: 40px;
+            color: rgb(0, 0, 172);
+        }
+        .smth a {
+            color: orangered;
+            text-decoration: none;
+            font-size: 36px;
+        }
+        .con {
+            font-family: sans-serif;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 10px 50px;
+        }
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: calc((100% - 500px) / 4);
+            height: 310px;
+            box-shadow: 1px 1px 10px rgb(67, 67, 67);
+            border-radius: 40px;
+            padding: 30px;
+        }
+        .con img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn.commeta.uz/media/uploaded/2024/11/27/Group_513199_YoK2nIP.png" alt="">
+        </div>
+        <div class="catalog">
+            <button>🏠 Home</button>
+            <button>📕 Learning</button>
+            <button>🛒 Shop</button>
+        </div>
+        <div class="create">
+            <button>+ Post yaratish</button>
+        </div>
+        <div class="quadro">
+            <img src="https://assets.faceit-cdn.net/teams_avatars/011a682b-09ef-41c9-9ddc-f4e5d981b59d_1550768942929.png" alt="">
+        </div>
+    </header>
+    <div class="smth">
+        <h1>🛒 Magazin</h1>
+        <a href="#">🕛 Haridlar Tarixi</a>
+    </div>
+    <div class="con">
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Mars%20rug/Shop_rug-removebg-preview.png" alt="">
+            <h2>Mars Rug</h2>
+            <span>🟡 100 Coins</span>
+            <p>24 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Keyboard%20sticker/Shop_keyboard_sticker-removebg-preview.png" alt="">
+            <h2>Keyboard sticker</h2>
+            <span>🟡 49 Coins</span>
+            <p>11 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Smart%20watch/Shop_smart_watch-removebg-preview.png" alt="">
+            <h2>Smart watch</h2>
+            <span>🟡 899 Coins</span>
+            <p>4 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Keyboard/keyboard_compressed.png" alt="">
+            <h2>Wireless keyboard</h2>
+            <span>🟡 350 Coins</span>
+            <p>0 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Mouse/mouse_compressed.png" alt="">
+            <h2>Mouse</h2>
+            <span>🟡 359 Coins</span>
+            <p>24 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/AirPods/Shop_Airpods-removebg-preview.png" alt="">
+            <h2>AirPods</h2>
+            <span>🟡 499 Coins</span>
+            <p>11 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Branded%20Powerbank/branded_powerband.png" alt="">
+            <h2>Power Bank</h2>
+            <span>🟡 899 Coins</span>
+            <p>5 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/USB%20flash%20drive/Shop_flash_drive-removebg-preview.png" alt="">
+            <h2>USB flash drive</h2>
+            <span>🟡 299 Coins</span>
+            <p>21 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Smartphone/Shop_phone-removebg-preview.png" alt="">
+            <h2>Smartphone</h2>
+            <span>🟡 3699 Coins</span>
+            <p>2 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Playstation%205/Shop_PS5-removebg-preview.png" alt="">
+            <h2>Playstation 5</h2>
+            <span>🟡 7449 Coins</span>
+            <p>Ushbu tolovga oldindan buyurma berish mumkun</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Yandex%20Station/Shop_Yandex_station-removebg-preview.png" alt="">
+            <h2>Yandex Station</h2>
+            <span>🟡 1999 Coins</span>
+            <p>4 dona mavjud</p>
+        </div>
+        <div class="items">
+            <img src="https://lab.marsit.uz/media/shop/Planshet%20Samsung/Shop_planshet-removebg-preview.png" alt="">
+            <h2>Planshet Samsung</h2>
+            <span>🟡 4999 Coins</span>
+            <p>24 dona mavjud</p>
+        </div>
+    </div>
+</body>
+</html>
