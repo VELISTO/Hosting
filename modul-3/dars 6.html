@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        header {
+            background-color:rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+        header img {
+            width: 60px;
+        }
+        header a {
+            color: black;
+            text-decoration: none;
+            margin-right: 30px;
+            transition: 0.3s ease;
+        }
+        .selec a:hover {
+            color: rgb(87, 87, 87);
+        }
+        .simplexp {
+            background-color: rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .creation {
+            width: 390px;
+            display: flex;
+            justify-items: left;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .creation h1 {
+            font-size: 40px;
+        }
+        .creation p {
+            font-size: 17px;
+        }
+        .creation button {
+            background-color: rgb(38, 122, 38);
+            color: white;
+            font-size: 15px;
+            text-transform: uppercase;
+            border: none;
+            padding: 10px 30px 10px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+        .creation button:hover {
+            background-color: rgb(30, 100, 30);
+            transform: scale(1.04);
+            box-shadow: 1px 1px 10px gray;
+        }
+        .smlo {
+            animation-name: rotation;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            position: relative;
+            bottom: 250px;
+            left: 80px;
+            width: 150px;
+            z-index: 22;
+        }   
+        .drpls {
+            position: relative;
+            top: 100px;
+            width: 600px;
+        }
+        .coll {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 120px;
+        }
+        .head h1 {
+            font-size: 34px;
+        }
+        .cof {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 300px;
+            margin-bottom: 100px;
+        }
+        .cof img {
+            width: 300px;
+            transition: 1s ease;
+        }
+        .cof img:hover {
+            transform: scale(1.2);
+        }
+        .cof h1 {
+            font-size: 34px;
+        }
+        .cof p {
+            font-size: 22px;
+        }
+        footer {
+            background-color: rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 70px 30px 70px;
+        }
+        .logo img {
+            width: 60px;
+            margin-left: 40px;
+        }
+        .selec a {
+            color: black;
+            text-decoration: none;
+            margin-right: 30px;
+            transition: 0.3s ease;
+        }
+        .mesl img {
+            width: 50px;
+            margin-right: 40px;
+            transition: 0.6s ease;
+        }
+        @keyframes rotation {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Mr_coffee_logo15.png" alt="">
+        </div>
+        <div class="selec">
+            <a href="">Home</a>
+            <a href="">About us</a>
+            <a href="">Create your plan</a>
+        </div>
+    </header>
+    <div class="simplexp">
+        <div class="creation">
+            <h1>Good Coffee <br>is made simply.</h1>
+            <p>Start your mornings with-the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
+            <button>Create your plan</button>
+        </div>
+        <div class="lss">
+            <img class="smlo" src="https://static.vecteezy.com/system/resources/previews/024/033/946/non_2x/circle-coffee-bean-logo-on-transparent-background-png.png" alt="">
+            <img class="drpls" src="https://thumbs.dreamstime.com/b/closeup-image-woman-s-hand-holding-cup-coffee-smart-phone-wooden-table-cafe-woman-s-hand-holding-cup-108995503.jpg" alt="">
+        </div>
+    </div>
+    <div class="coll">
+        <div class="head">
+            <h1>OUR COLLECTION</h1>
+        </div>
+        <div class="cof">
+            <img src="https://broadsheetcoffee.com/cdn/shop/files/danche.png?v=1729799629" alt="">
+            <div>
+                <h1>DANCHE</h1>
+                <p>Ethiopian hand-harvested blend densely <br>packed with vibrant fruit notes.</p>
+            </div>
+        </div>
+        <div class="cof">
+            <div>
+                <h1>Gran Espresso</h1>
+                <p>Light and flavorful blend with cocoa and <br>black pepper for an intense experience.</p>
+            </div>
+            <img src="https://images.prom.ua/5691900205_kofe-zernovoj-lavazza.jpg" alt="">
+        </div>
+        <div class="cof">
+            <img src="https://cdn.salla.sa/mEGGZ/514f1332-9149-465a-b822-17a9e8d50aa4-750.5211952745x1000-uUPoxHB0EkdK21pvCY07av8amQhBDCuXaYd8ghiW.jpg" alt="">
+            <div>
+                <h1>Piccollo</h1>
+                <p>Mild and smooth blend featuring notes <br>of toasted almond and dried cherry.</p>
+            </div>
+        </div>
+        <div class="cof">
+            <div>
+                <h1>Planalto</h1>
+                <p>Brazilian dark roast with rich and velvety <br>body, and hints of fruits and nuts.</p>
+            </div>
+            <img src="https://coffeeroaster-subscription-site.vercel.app/_next/image?url=%2Fassets%2Fhome%2Fdesktop%2Fimage-planalto.png&w=640&q=75" alt="">
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Mr_coffee_logo15.png" alt="">
+        </div>
+        <div class="selec">
+            <a href="">Home</a>
+            <a href="">About us</a>
+            <a href="">Create your plan</a>
+        </div>
+        <div class="mesl">
+            <img src="https://img.icons8.com/m_rounded/512/facebook-new.png" alt="">
+            <img src="https://cdn.creazilla.com/icons/7911121/twitter-icon-md.png" alt="">
+            <img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="">
+        </div>
+    </footer>
+</body>
+</html>
