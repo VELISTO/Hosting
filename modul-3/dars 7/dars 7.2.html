@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        header {
+            background-color:rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+        header img {
+            width: 60px;
+        }
+        header a {
+            color: black;
+            text-decoration: none;
+            margin-right: 30px;
+            transition: 0.3s ease;
+        }
+        .selec a:hover {
+            color: rgb(87, 87, 87);
+        }
+        .simplexp {
+            background-color: rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .creation {
+            height: 400px;
+            width: 390px;
+            display: flex;
+            justify-items: left;
+            align-items: center;
+            flex-direction: column;
+        }
+        .creation h1 {
+            font-size: 50px;
+        }
+        .creation p {
+            font-size: 17px;
+        }
+        .smlo {
+            animation-name: rotation;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            position: relative;
+            bottom: 220px;
+            left: 80px;
+            width: 150px;
+            z-index: 22;
+        }   
+        .drpls {
+            position: relative;
+            width: 400px;
+        }
+        .coll {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .coll img {
+            width: 500px;
+        }
+        .coll h1 {
+            text-align: center;
+        }
+        .coll p {
+            font-size: 17px;
+        }
+        .qual {
+            background-color: rgb(167, 105, 51);
+            height: 450px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 90px;
+        }
+        .qual img {
+            width: 450px;
+            position: relative;
+            bottom: 60px;
+        }
+        .cont {
+            color: white;
+            width: 500px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        .cont h1 {
+            font-size: 46px;
+            text-transform: uppercase;
+        }
+        .cont p {
+            font-size: 17px;
+        }
+        footer {
+            background-color: rgb(255, 190, 133);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 70px 30px 70px;
+        }
+        .logo img {
+            width: 60px;
+            margin-left: 40px;
+        }
+        .selec a {
+            color: black;
+            text-decoration: none;
+            margin-right: 30px;
+            transition: 0.3s ease;
+        }
+        .mesl img {
+            width: 50px;
+            margin-right: 40px;
+            transition: 0.6s ease;
+        }
+        @keyframes rotation {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Mr_coffee_logo15.png" alt="">
+        </div>
+        <div class="selec">
+            <a href="dars 7.1.html">Home</a>
+            <a href="">About us</a>
+            <a href="">Create your plan</a>
+        </div>
+    </header>
+    <div class="simplexp">
+        <div class="creation">
+            <h1>About Us</h1>
+            <p>Coffeeroasters began its journey of exotic discovery in 1999, highlighting stories of coffee from around the world. We have since been dedicated to bring the perfect cup - from bean to brew - in every shipment.</p>
+        </div>
+        <div class="lss">
+            <img class="smlo" src="https://static.vecteezy.com/system/resources/previews/024/033/946/non_2x/circle-coffee-bean-logo-on-transparent-background-png.png" alt="">
+            <img class="drpls" src="https://assets.beanbox.com/blog_images/qBa69brqTgezQP8An5wQ.jpeg" alt="">
+        </div>
+    </div>
+    <div class="coll">
+        <img src="https://img.freepik.com/premium-vector/realistic-cup-with-black-coffee-white-espresso-mug-saucer-ceramic-tableware-hot-caffeine-drink-side-view-porcelain-tableware-isolated-cafeteria-menu-element-vector-beverage-serving_176516-5207.jpg?semt=ais_hybrid&w=740" alt="">
+        <div style="width: 500px;">
+            <h1>Our commitment</h1>
+            <p>We’re built on a simple mission and a commitment to doing good along the way. We want to make it easy for you to discover and brew the world’s best coffee at home. It all starts at the source. To locate the specific lots we want to purchase, we travel nearly 60 days a year trying to understand the challenges and  initiatives, and invest in coffee plant science. Curating only the finest blends, we roast each lot to highlight tasting profiles distinctive to their native growing region.</p>
+        </div>
+    </div>
+    <div class="qual">
+        <div class="cont">
+            <h1>Uncompromising quality</h1>
+            <p>Although we work with growers who pay close attention to all stages of harvest and processing, we employ, on our end, a rigorous quality control program to avoid over-roasting or baking the coffee dry. Every bag of coffee is tagged with a roast date and batch number. Our goal is to roast consistent, user-friendly coffee, so that brewing is easy and enjoyable.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyaXN0YXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Mr_coffee_logo15.png" alt="">
+        </div>
+        <div class="selec">
+            <a href="dars 7.1.html">Home</a>
+            <a href="">About us</a>
+            <a href="">Create your plan</a>
+        </div>
+        <div class="mesl">
+            <img src="https://img.icons8.com/m_rounded/512/facebook-new.png" alt="">
+            <img src="https://cdn.creazilla.com/icons/7911121/twitter-icon-md.png" alt="">
+            <img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="">
+        </div>
+    </footer>
+</body>
+</html>
