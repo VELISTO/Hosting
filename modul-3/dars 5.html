@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box {
+            animation-name: build;
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+            position: fixed;
+            background-color: black;
+            width: 70px;
+            height: 100px;
+            top: 100%;
+        }
+        .b1 {
+            animation-name: b1;
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+        }
+        .b2 {
+            animation-name: b2;
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+        }
+        .b3 {
+            animation-name: b3;
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes build {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            10% {
+                transform: translateY(-400px) rotate(360deg);
+            }
+            50% {
+                background-color: red;
+            }
+            90% {
+                transform: translateY(-400px) rotate(360deg);
+            }
+        }
+        @keyframes b1 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            10% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+            15% {
+                transform: translateY(-485px)  rotate(360deg) scale(0.8);
+            }
+            55% {
+                background-color: rgb(255, 40, 0);
+            }
+            85% {
+                transform: translateY(-485px)  rotate(360deg) scale(0.8);
+            }
+            90% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+        }
+        @keyframes b2 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            10% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+            15% {
+                transform: translateY(-485px) rotate(360deg) scale(0.8);
+            }
+            20% {
+                transform: translateY(-554px)  rotate(360deg) scale(0.6);
+            }
+            60% {
+                background-color: rgb(255, 80, 0);
+            }
+            80% {
+                transform: translateY(-554px)  rotate(360deg) scale(0.6);
+            }
+            85% {
+                transform: translateY(-485px) rotate(360deg) scale(0.8);
+            }
+            90% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+        }
+        @keyframes b3 {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            10% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+            15% {
+                transform: translateY(-485px) rotate(360deg) scale(0.8);
+            }
+            20% {
+                transform: translateY(-554px)  rotate(360deg) scale(0.6);
+            }
+            25% {
+                transform: translateY(-603px)  rotate(360deg) scale(0.4);
+            }
+            65% {
+                background-color: rgb(255, 120, 0);
+            }
+            75% {
+                transform: translateY(-603px)  rotate(360deg) scale(0.4);
+            }
+            80% {
+                transform: translateY(-554px)  rotate(360deg) scale(0.6);
+            }
+            85% {
+                transform: translateY(-485px) rotate(360deg) scale(0.8);
+            }
+            90% {
+                transform: translateY(-400px) rotate(360deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box b1"></div>
+        <div class="box b2"></div>
+        <div class="box b3"></div>
+        <div class="box b4"></div>
+    </div>
+</body>
+</html>
