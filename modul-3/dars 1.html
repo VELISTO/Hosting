@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dars 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 0  0 1px rgba(162, 162, 162, 0.819);
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+            margin-left: 180px;
+        }
+        select {
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            margin-right: 250px;
+        }
+        .con {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            justify-content: start;
+            align-items: center;
+            height: 540px;
+            width: 550px;
+            margin: 20px auto;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .top {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+        }
+        .top button {
+            border: none;
+            color: orangered;
+            background-color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .top img {
+            width: 200px;
+            height: auto;
+        }
+        .opts {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+        .switcher button {
+            background-color: transparent;
+            border: none;
+            padding: 10px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .switcher button.active {
+            background-color: #ffffff;
+            box-shadow: 0 0 0 1px #ccc;
+            border-radius: 14px;
+        }
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .inpl {
+          background-color: #f0f0f0;
+            width: 300px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .pass {
+          background-color: #f0f0f0;
+          width: 300px;
+          padding: 5px 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border: 1px solid #ccc;
+          border-radius: 12px;
+          font-size: 16px;
+        }
+        .pass img {
+          width: 30px
+        }
+        .pass input {
+          background-color: #f0f0f0;
+          border: none;
+          font-size: 16px;
+        }
+        .qr-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .submit {
+            width: 100px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: none;
+            background-color: #af634c;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .w-btn{
+            display: flex;
+            width: 60%;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn.commeta.uz/media/uploaded/2024/11/27/Group_513199_YoK2nIP.png" alt="">
+        </div>
+        <select name="" id="">
+            <option value="">🌐O'zb</option>
+            <option value="">🌐Rus</option>
+        </select>
+    </header>
+    <div class="con">
+        <div class="top">
+            <img src="https://cdn.commeta.uz/media/uploaded/2024/11/27/Group_513199_YoK2nIP.png" alt="">
+            <div><button>Offerta imzolash 📩</button></div>
+        </div>
+        <div class="opts">
+            <h1>Spacega xush kelibsiz</h1>
+            <div class="switcher">
+                <button class="active">O‘quvchiman</button>
+                <button>Ota-onaman</button>
+            </div>
+        </div>
+        <div class="inputs">
+            <input class="inpl" type="text" placeholder="Modme Id or Phone number">
+            <div class="pass">
+              <input type="text" placeholder="Password">
+              <img src="https://cdn0.iconfinder.com/data/icons/essential-line-v-2/24/Hide-1024.png" alt="">
+            </div>
+        </div>
+        <div class="qr-text">
+            <p>QR kod orqali kirish</p>
+        </div>
+        <div class="w-btn" >
+            <button class="submit">Подтвердить</button>
+        </div>
+    </div>
+</body>
+</html>
