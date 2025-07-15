@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WeloSport.com</title>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      header {
+        background-image: url("https://img.freepik.com/premium-photo/cyclist-black-background_684882-1177.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .menub {
+        position: fixed;
+        top: 0;
+        background-color: #888888B0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        width: 100%;
+        z-index: 22;
+        overflow: hidden;
+      }
+      .logo img {
+        width: 60px;
+        margin-left: 200px;
+      }
+      .cata {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 30px;
+      }
+      .cata a {
+        font-size: 13px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s ease;
+      }
+      .cata a:hover {
+        color: rgb(187, 187, 187);
+      }
+      .set {
+        margin-right: 200px;
+      }
+      .set img {
+        width: 20px;
+        margin-right: 30px;
+        cursor: pointer;
+      }
+      .absi {
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+      }
+      .about {
+        position: relative;
+        right: 300px;
+        width: 500px;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .about h1 {
+        font-size: 50px;
+      }
+      .about p {
+        font-size: 22px;
+      }
+      .about button {
+        background-color: #ff8800;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 35px;
+        margin-top: 30px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .about button:hover {
+        background-color: #e27800;
+      }
+      .highw {
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .highw h1 {
+        font-size: 40px;
+      }
+      .catb {
+        height: 870px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .bikes {
+        position: absolute;
+        top: 600px;
+        height: 220px;
+        width: 900px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 70px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .bikes:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .bikes img {
+        position: absolute;
+        transform: translateY(20%) translateX(50%) rotate(-15deg);
+        width: 600px
+      }
+      .trade {
+        position: absolute;
+        top: 870px;
+        transform: translateX(-335px);
+        width: 250px;
+        height: 360px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 120px 60px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .trade:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .trade img {
+        position: absolute;
+        transform: translateY(30%) translateX(-10%) rotate(-15deg);
+        width: 700px
+      }
+      .parts {
+        position: absolute;
+        top: 870px;
+        width: 160px;
+        height: 255px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 60px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .parts:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .parts img {
+        position: absolute;
+        transform: translateY(50%) translateX(-20%) rotate(-15deg);
+        width: 300px
+      }
+      .equi {
+        position: absolute;
+        top: 870px;
+        transform: translateX(335px);
+        width: 250px;
+        height: 255px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 60px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .equi:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .equi img {
+        position: absolute;
+        transform: translateY(50%) translateX(20%) rotate(-15deg);
+        width: 250px
+      }
+      .airb {
+        position: absolute;
+        top: 1175px;
+        width: 160px;
+        height: 255px;
+        font-size: 32px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 60px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .airb:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .airb img {
+        position: absolute;
+        transform: translateY(20%) translateX(-20%) rotate(15deg);
+        width: 250px;
+      }
+      .airb1 {
+        position: absolute;
+        top: 1175px;
+        transform: translateX(335px);
+        width: 250px;
+        height: 255px;
+        font-size: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 60px;
+        transition: 0.3s ease;
+        cursor: pointer;
+      }
+      .airb1:hover {
+        background-color: #ff8800;
+        color: white;
+      }
+      .airb1 img {
+        position: absolute;
+        transform: translateY(0%) translateX(0%) rotate(15deg);
+        width: 300px
+      }
+      .view {
+        width: 1070px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 70px;
+      }
+      .bicyc {
+        background-color: black;
+        color: white;
+        width: calc((100% - 150px) / 3);
+        border-radius: 10px;
+        height: 340px;
+        overflow: hidden;
+      }
+      .bicyc img {
+        width: 100%;
+        height: 200px;
+      }
+      .bicyc h3, p {
+        margin: 20px 30px 0 30px;
+        font-size: 15px;
+      }
+      form {
+        background-image: url("https://st.depositphotos.com/1113936/3573/v/450/depositphotos_35730373-stock-illustration-active-cyclist-bicycle-rider-active.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+      .regsi {
+        position: relative;
+        left: 200px;
+        width: 480px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .regsi h1 {
+        color: white;
+        font-size: 46px;
+      }
+      .regsi input {
+        width: 200px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: none;
+        appearance: textfield;
+      }
+      .regsi button {
+        background-color: white;
+        color: #ff8800;
+        width: 220px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        margin-bottom: 50px;
+        cursor: pointer;
+      }
+      .regsi textarea {
+        width: 440px;
+        height: 100px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: none;
+        resize: none;
+      }
+      footer {
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 30px;
+        color: white;
+      }
+      .logoe img {
+        width: 70px;
+      }
+      .catalog {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .catalog a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+        transition: 0.3s ease;
+      }
+      .abotg {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .abotg a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+        transition: 0.3s ease;
+      }
+      .contact {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .contact a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 5px;
+        transition: 0.3s ease;
+      }
+      .catalog a:hover {
+        color: rgb(171, 171, 171);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menub">
+        <div class="logo">
+          <img src="https://png.pngtree.com/png-vector/20221211/ourmid/pngtree-bike-cycling-logo-people-logo-relaxation-vector-png-image_7591412.png" alt="">
+        </div>
+        <div class="cata">
+          <a href="#">Trade in</a>
+          <a href="#">Велосипеды</a>
+          <a href="#">Запчасти</a>
+          <a href="#">Экипировка</a>
+        </div>
+        <div class="set">
+          <img src="https://olvent.ua/catalog/view/theme/allvent/image/wishlist_i.svg" alt="">
+          <img src="https://cdn1.iconfinder.com/data/icons/line-awesome-vol-5/32/shopping-cart-solid-512.png" alt="">
+          <img src="https://webdesignprojects.spbu.ru/fall_term23/evtushenko/img/Hamburger_icon.svg.png" alt="">
+        </div>
+      </div>
+      <div class="absi">
+        <div class="about">
+          <h1>Электро Велосипеды</h1>
+          <p>Cento10 Hybrid -- это гоночный велосипед с помогающим педалированию стандард для данной категории.</p>
+          <button type="button" name="button">Подробнее</button>
+        </div>
+      </div>
+    </header>
+    <div class="highw">
+      <h1>Каталог</h1>
+      <div class="catb">
+        <div class="bikes">
+          Велосипеды
+          <img src="https://spb.eko-bike.ru/files/resized/products/001210haibike_2018_xduro_fullfatsix_90.800x800.png" alt="">
+        </div>
+        <div class="trade">
+          Trade-in
+          <img src="https://stark.ru/upload/iblock/c8a/nso6px7jwyf9qhcful6udcmxomf45o9a.png" alt="">
+        </div>
+        <div class="parts">
+          Запчасти
+          <img src="https://i.pinimg.com/originals/c8/dc/01/c8dc0154ac11c8ea3391ce7c5f3eb924.png" alt="">
+        </div>
+        <div class="equi">
+          Экипировка
+          <img width="300px" src="https://i.pinimg.com/originals/f1/61/aa/f161aa0e591ea41e31daa614a0a370f3.png" alt="">
+        </div>
+        <div class="airb">
+          Велостанки
+          <img src="https://ekaterinburgsport.ru/uploadedFiles/eshopimages/icons/500x500/BH_FITNESS_SB2.6_5fdc5918162c2.png" alt="">
+        </div>
+        <div class="airb1">
+          Велостанки
+          <img src="https://ekaterinburgsport.ru/uploadedFiles/eshopimages/icons/500x500/BH_FITNESS_SB2.6_5fdc5918162c2.png" alt="">
+        </div>
+      </div>
+      <h1>Трассы</h1>
+      <div class="view">
+        <div class="bicyc">
+          <img src="https://avatars.mds.yandex.net/i?id=0fdd8a080536424ede61977e051eced633e1311b-12369942-images-thumbs&n=13" alt="">
+          <h3>14.02.2023</h3>
+          <p>Pinarello Dogma F развивает карбоновый шоссейный велосипед следующего поколения.</p>
+        </div>
+        <div class="bicyc">
+          <img src="https://avatars.mds.yandex.net/get-mpic/3732535/img_id613828268402595183.jpeg/orig" alt="">
+          <h3>25.01.2023</h3>
+          <p>BMC Kaius 01 идеальный гоночный гравийный велосипед.</p>
+        </div>
+        <div class="bicyc">
+          <img src="https://avatars.mds.yandex.net/i?id=2f30ade855b8fe960e7af587521627a6a920cb93-10246869-images-thumbs&n=13" alt="">
+          <h3>24.01.2023</h3>
+          <p>Все гоночные велосипеды BMC FourStoke  XC оснащены вошебным подседельным щтыр...</p>
+        </div>
+        <div class="bicyc">
+          <img src="https://world-bike.ru/upload/iblock/76b/vpva2u9pzlmqypwh4mbrck71o6irws6l.jpg" alt="">
+          <h3>24.01.2023</h3>
+          <p>Велосипед Wilier Grantismo SLR для шоссейных гонок.</p>
+        </div>
+        <div class="bicyc">
+          <img src="https://avatars.mds.yandex.net/i?id=b0fa8fbbb718e731459c48c75e66a04f_l-9293984-images-thumbs&n=13" alt="">
+          <h3>24.01.2023</h3>
+          <p>Первые поездки на новой гоночной ракете Wilier Urta SLR 100mm XC MTB, всего 9,8кг!</p>
+        </div>
+        <div class="bicyc">
+          <img src="https://avatars.mds.yandex.net/i?id=d444d0eb827c36e89a5a3f3d84fcea85_l-12614136-images-thumbs&n=13" alt="">
+          <h3>24.01.2023</h3>
+          <p>Велосипед Wilier Grantismo SLR для шоссейных гонок.</p>
+        </div>
+      </div>
+    </div>
+    <form class="reg" action="index.html" method="post">
+      <div class="regsi">
+        <h1>Свяжитесь с нами по любым вопросам</h1>
+        <input type="name" name="name" placeholder="Имя">
+        <input type="email" name="email" placeholder="E-Mail">
+        <input type="number" name="num" placeholder="Телефон">
+        <input type="text" name="com" placeholder="Компаня">
+        <textarea name="message" placeholder="Сообщение"></textarea>
+        <button type="button" name="rego">Оставить заявку</button>
+        <button type="button" name="?">Задать ворос</button>
+      </div>
+    </form>
+    <div class="coords">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d794.4462968983526!2d37.567430567757135!3d55.7231667232764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1752495169230!5m2!1sru!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <footer>
+      <div class="logoe">
+        <img src="https://png.pngtree.com/png-vector/20221211/ourmid/pngtree-bike-cycling-logo-people-logo-relaxation-vector-png-image_7591412.png" alt="">
+      </div>
+      <div class="catalog">
+        <h2>Каталог</h2>
+        <a href="#">Trade in</a>
+        <a href="#">Велосипеды</a>
+        <a href="#">Запчасти</a>
+        <a href="#">Экипировка</a>
+      </div>
+      <div class="abotg">
+        <h2>Для Клиента</h2>
+        <a href="#">О нас</a>
+      </div>
+      <div class="contact">
+        <h2>Контакты</h2>
+        <div>
+          <img src="" alt="">
+          <a href="#">+7(495)055-75-86</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
