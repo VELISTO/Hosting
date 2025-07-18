@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(5, 5, 32);
+            font-family: sans-serif;
+        }
+        header {
+            background-color: rgb(7, 7, 35);
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        .frst {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .nar {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 24px;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            display: inline-block;
+        }
+        nav .drop {
+            position: absolute;
+            z-index: 22;
+            width: 200px;
+            padding: 30px 0;
+            background-color: rgb(189, 189, 189);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 14%;
+            transform: translateY(-15px);
+            transition: 0.3s ease;
+        }
+        nav:hover .drop {
+            display: flex;
+        }
+        .drop:hover {
+            background-color: rgb(46, 46, 46);
+            box-shadow: 0 0 40px gray;
+        }
+        .drop li {
+            background-color: black;
+            width: 70%;
+            border-radius: 10px;
+            padding: 5px 5px;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+        .drop a {
+            text-decoration: none;
+            background-color: transparent;
+            color: white;
+            text-align: center;
+        }
+        .a:hover {
+            background-color: rgb(0, 177, 177);
+            color: white;
+        }
+        .scst {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .scst a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+        .scst a button {
+            color: black;
+            background-color: aquamarine;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 19px;
+            transition: 0.3s ease;
+        }
+        .log:hover {
+            background-color: rgb(91, 192, 158);
+        }
+        .heroes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .her {
+            background-color: rgb(46, 46, 46);
+            color: white;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            font-size: 14px;
+            width: 230px;
+            height: 230px;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 260px;
+        }
+        .her img {
+            position: absolute;
+            transform: translateY(-220px);
+        }
+        .her p {
+            text-align: center;
+        }
+        .her h1 {
+            font-size: 22px;
+        }
+        footer {
+            background-color: rgb(5, 5, 32);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        footer a{
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            margin-right: 30px;
+            transition: 0.2s ease;
+        }
+        footer a:hover {
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="frst">
+            <h1>Магическая битва</h1>
+            <nav>
+                <button class="nar">Наруто ⇳</button>
+                <ul class="drop">
+                    <li class="a"><a href="">Страна Волн</a></li>
+                    <li class="a"><a href="">Омаке</a></li>
+                    <li class="a"><a href="">Артефакт</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="scst">
+            <a href="">Регистрация</a>
+            <a href=""><button class="log">Вход</button></a>
+        </div>
+    </header>
+    <div class="heroes">
+        <div class="her">
+            <img width="230px" src="https://img1.picmix.com/output/stamp/normal/3/9/0/8/2538093_2d865.png" alt="">
+            <h1>Годжо Сатору</h1>
+            <p>Годзё Сатору — загадочный и чрезвычайно могущественный колдун из «Дзюдзюцу Кайсен». Известный своими поразительными повязками на глазах и безграничными способностями, он излучает атмосферу непобедимости.</p>
+        </div>
+        <div class="her">
+            <img width="130px" src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0a/Yuji_Anime.png/revision/latest?cb=20200929135540&path-prefix=ru" alt="">
+            <h1>Юджи Итадори</h1>
+            <p>Юджи Итадори, главный герой сериала, добросердечный старшеклассник, попавший в мир проклятий. Обладая огромной физической силой и неукротимым духом. В нем сидит древний злодей Сукуна.</p>
+        </div>
+        <div class="her">
+            <img width="100px" src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f1/Megumi_Anime.png/revision/latest?cb=20200929135534&path-prefix=ru" alt="">
+            <h1>Мегуми Фушигуро</h1>
+            <p>Мегуми Фусигуро — стойкий и стратегический колдун, вооруженный уникальной техникой призыва, которая помогает ему в бою. Его сдержанный характер, он обладает яростным чувством справедливости.</p>
+        </div>
+        <div class="her">
+            <img width="90px" src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/d/dd/Nobara_Kugisaki_%28Anime_2%29.png/revision/latest?cb=20240621133809" alt="">
+            <h1>Ноабара Кугисаки</h1>
+            <p>Нобара Кугисаки, энергичный и следящий за модой колдун, владеет молотом, наполненным проклятой энергией, демонстрируя сочетание прочности и стиля. Героична погибла в бое с Махито</p>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <h1>Магическая битва</h1>
+        </div>
+        <div>
+            <a href="">LinkedIn</a>
+            <a href="">Instagram</a>
+            <a href="">Tiktok</a>
+        </div>
+    </footer>
+</body>
+</html>
