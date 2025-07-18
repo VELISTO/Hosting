@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        header {
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+        header img {
+            width: 130px;
+            margin-left: 100px;
+        }
+        header a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            margin-right: 20px;
+            transition: 0.2s ease;
+        }
+        header a:hover {
+            color: rgb(202, 202, 202);
+        }
+        .var {
+            margin-right: 200px;
+        }
+        .backv  {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            transform: translateY(60%) translateX(10%);
+        }
+        .text button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            font-size: 15px;
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .text button:hover {
+            background-color: white;
+            color: rgb(41, 41, 41);
+        }
+        .icon {
+            position: relative;
+            z-index: 22;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-160%);
+        }
+        .icon img {
+            animation-name: arrow;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            width: 50px;
+            filter: invert(1);
+        }
+        footer {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .vare {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+        }
+        .vare a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            transition: 0.2s ease;
+        }
+        .vare a:hover {
+            color: rgb(202, 202, 202);
+        }
+        @keyframes arrow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(30%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="l">
+            <img src="https://cdn.myportfolio.com/e200af6f200cc6e596eac4a42f9d531f/db7be00b-abfa-4f70-8132-135d55b12d90_rw_1920.jpg?h=38e620d722338a2778b8b133cf456ba4" alt="">
+        </div>
+        <div class="var">
+            <a href="">FALCON 9</a>
+            <a href="">FALCON HEAVY</a>
+            <a href="">DRAGON</a>
+            <a href="">STARSHIP</a>
+            <a href="">HUMAN SPACEFLIGHT</a>
+            <a href="">RIDESHARE</a>
+            <a href="">STARSHIELD</a>
+            <a href="">STARLINK</a>
+        </div>
+    </header>
+    <div class="backv">
+        <video src="./1.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <p>UPCOMING LAUNCH</p>
+            <h1>Starlink Mission</h1>
+            <button>WATCH</button>
+        </div>
+        <div class="icon">
+            <img src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="">
+        </div>
+    </div>
+    <div class="backv">
+        <video src="./2.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <p>UPCOMING LAUNCH</p>
+            <h1>Starlink Mission</h1>
+            <button>WATCH</button>
+        </div>
+    </div>
+    <div class="backv">
+        <video src="./3.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <p>UPCOMING LAUNCH</p>
+            <h1>ASTRA 1P MISSION</h1>
+            <button>REWATCH</button>
+        </div>
+    </div>
+    <div class="backv">
+        <video src="./4.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <p>RECENT LAUNCH</p>
+            <h1>Starship's Fourth <br>Flight Test</h1>
+            <button>LEARN MORE</button>
+        </div>
+    </div>
+    <div class="backv">
+        <video src="./5.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <h1>ADVANCING HUMAN <br>SPACEFLIGHT</h1>
+            <button>LEARN MORE</button>
+        </div>
+    </div>
+    <div class="backv">
+        <video src="./6.mp4" autoplay="autoplay" muted>
+        </video>
+        <div class="text">
+            <h1>TO MAKE LIFE <br>MULTIPLANETARY</h1>
+            <button>LEARN MORE</button>
+        </div>
+    </div>
+    <footer>
+        <div class="vare">
+            <a href="">SPACEX © 2024</a>
+            <a href="">PRIVACY POLICY</a>
+            <a href="">SUPPLIERS</a>
+        </div>
+    </footer>
+</body>
+</html>
