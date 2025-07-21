@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+            font-family: sans-serif;
+            padding: 20px;
+            transition: 0.5s ease;
+        }
+        .con {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            transition: 0.5s ease;
+        }
+        .box {
+            padding: 60px 0;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.5s ease;
+        }
+        .box:nth-child(1) { background-color: red; }
+        .box:nth-child(2) { background-color: red; }
+        .box:nth-child(3) { background-color: red; }
+        .box:nth-child(4) { background-color: red; }
+        .box:nth-child(5) { background-color: red; }
+        .box:nth-child(6) { background-color: red; }
+        @media (max-width: 1024px) {
+            .con {
+                grid-template-columns: repeat(3, 2fr);
+            }
+            body { background-color: green; }
+            .box:nth-child(1) { background-color: black; color: white; padding: 55px 0; }
+            .box:nth-child(2) { background-color: black; color: white; padding: 55px 0; }
+            .box:nth-child(3) { background-color: black; color: white; padding: 55px 0; }
+            .box:nth-child(4) { background-color: black; color: white; padding: 55px 0; }
+            .box:nth-child(5) { background-color: black; color: white; padding: 55px 0; }
+            .box:nth-child(6) { background-color: black; color: white; padding: 55px 0; }
+        }
+        @media (max-width: 768px) {
+            .con {
+                grid-template-columns: repeat(3, 2fr);
+            }
+            body { background-color: red; }
+            .box:nth-child(1) { background-color: yellow; color: violet; padding: 55px 0; }
+            .box:nth-child(2) { background-color: yellow; color: violet; padding: 55px 0; }
+            .box:nth-child(3) { background-color: yellow; color: violet; padding: 55px 0; }
+            .box:nth-child(4) { background-color: yellow; color: violet; padding: 55px 0; }
+            .box:nth-child(5) { background-color: yellow; color: violet; padding: 55px 0; }
+            .box:nth-child(6) { background-color: yellow; color: violet; padding: 55px 0; }
+        }
+        @media (max-width: 425px) {
+            .con {
+                grid-template-columns: repeat(2, 3fr);
+            }
+            body { background-color: blue; }
+            .box:nth-child(1) { background-color: white; color: black; padding: 45px 0; }
+            .box:nth-child(2) { background-color: white; color: black; padding: 45px 0; }
+            .box:nth-child(3) { background-color: white; color: black; padding: 45px 0; }
+            .box:nth-child(4) { background-color: white; color: black; padding: 45px 0; }
+            .box:nth-child(5) { background-color: white; color: black; padding: 45px 0; }
+            .box:nth-child(6) { background-color: white; color: black; padding: 45px 0; }
+        }
+        @media (max-width: 375px) {
+            .con {
+                grid-template-columns: repeat(2, 3fr);
+            }
+            body { background-color: orangered; }
+            .box:nth-child(1) { background-color: greenyellow; color: black; padding: 45px 0; }
+            .box:nth-child(2) { background-color: greenyellow; color: black; padding: 45px 0; }
+            .box:nth-child(3) { background-color: greenyellow; color: black; padding: 45px 0; }
+            .box:nth-child(4) { background-color: greenyellow; color: black; padding: 45px 0; }
+            .box:nth-child(5) { background-color: greenyellow; color: black; padding: 45px 0; }
+            .box:nth-child(6) { background-color: greenyellow; color: black; padding: 45px 0; }
+        }
+        @media (max-width: 320px) {
+            .con {
+                grid-template-columns: repeat(1, 6fr);
+            }
+            body { background-color: black; }
+            .box:nth-child(1) { background-color: white; color: black; padding: 35px 0; }
+            .box:nth-child(2) { background-color: white; color: black; padding: 35px 0; }
+            .box:nth-child(3) { background-color: white; color: black; padding: 35px 0; }
+            .box:nth-child(4) { background-color: white; color: black; padding: 35px 0; }
+            .box:nth-child(5) { background-color: white; color: black; padding: 35px 0; }
+            .box:nth-child(6) { background-color: white; color: black; padding: 35px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+    </div>
+</body>
+</html>
