@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        header {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUVhjH05ZKbmLj8D-ur8FrUuEMdvTzbmYFRg&s");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            margin-left: 100px;
+        }
+        .lbs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+        }
+        .lbs a {
+            text-decoration: none;
+            color: white;
+            transition: 0.5s ease;
+        }
+        .lbs a:hover {
+            color: rgb(185, 185, 185);
+        }
+        .isr {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid gray;
+            margin-right: 100px;
+        }
+        .isr input {
+            width: 250px;
+            height: 40px;
+            font-size: 16px;
+            padding-left: 10px;
+            border: none;
+            outline: none;
+        }
+        .isr img {
+            width: 20px;
+            margin-right: 15px;
+        }
+        .bs {
+            position: absolute;
+            left: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            color: white;
+        }
+        .bs button {
+            color: black;
+            font-weight: bold;
+            background-color: green;
+            border: none;
+            padding: 10px;
+            margin-top: 30px;
+            transition: 1s ease;
+        }
+        .bs button:hover {
+            background-color: rgb(124, 187, 29);
+            transform: scale(1.1);
+        }
+        .shs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .shb {
+            width: 95%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 50px;
+            margin: 30px 0;
+        }
+        .box {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 7px 20px -5px rgb(68, 68, 68);
+        }
+        .box h2 {
+            margin: 10px 30px;
+            font-size: 20px;
+        }
+        .box p {
+            display: flex;
+            align-items: baseline;
+            justify-content: baseline;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .bcs {
+            width: 100%;
+            height: 160px;
+        }
+        .rs {
+            width: 20px;
+        }
+        .train {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cen {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgb(161, 161, 161);
+        }
+        .cen img {
+            width: 600px;
+        }
+        .gtr {
+            width: 350px;
+        }
+        .gtr h1 {
+            color: green;
+            font-size: 40px;
+        }
+        .gtr button {
+            background-color: green;
+            font-weight: bold;
+            font-size: 17px;
+            padding: 20px;
+            border: none;
+            transition: 1s ease;
+        }
+        .gtr button:hover {
+            background-color: rgb(124, 187, 29);
+            transform: scale(1.1);
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+        footer img {
+            width: 160px;
+        }
+        footer h1 {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="l">
+                <h1 class="logo">Marketplace</h1>
+            </div>
+            <div class="lbs">
+                <a href="">Products</a> 
+                <a href="">Brands</a> 
+                <a href="">Details</a> 
+                <a href="">Support</a> 
+            </div>
+            <div class="isr">
+                <input type="text" placeholder="Search Marketplace">
+                <img src="https://cdn-icons-png.flaticon.com/512/1086/1086916.png" alt="">
+            </div>
+        </div>
+        <div class="bs">
+            <h1>More Options. <br>More to Love</h1>
+            <button>Buy Now</button>
+        </div>
+    </header>
+    <div class="shs">
+        <div class="namehol">
+            <h1>Gaming and Entertainment</h1>
+        </div>
+        <div class="shb">
+            <div class="box" data-aos="slide-right">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsHAPg6lF2upohO-RZRvClZFqdxFnDhe7Z4w&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="flip-up">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvP-WbucWxDdZwlQn8hdJU1Z0rXxPN29G4zg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="flip-up">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ57O5Dduue_OQyG4DbOUH57vrb_osxdLFIcg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="slide-left">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUVhjH05ZKbmLj8D-ur8FrUuEMdvTzbmYFRg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+        </div>
+        <div class="namehol">
+            <h1>Graphics Cards, Laptops and Embedded Systems</h1>
+        </div>
+        <div class="shb">
+            <div class="box" data-aos="slide-up">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVwkX0bp37mqLxh-2EBf6DwI2LDlUoMGR4Gg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA3_kdJmbF9ab16azqDI8fIaHPTI6he9tdjg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCkHVMQfl3eSYnlu3BUgjKH0Z08wq4qoBLKQ&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="fade-up">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx3xCQIexR3ib2XHbwUoj6v8BVUsjo7jT1mA&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+        </div>
+        <div class="namehol">
+            <h1>Networking</h1>
+        </div>
+        <div class="shb">
+            <div class="box" data-aos="fade-right">
+                <img class="bcs" src="https://img.electronicdesign.com/files/base/ebm/electronicdesign/image/2022/01/VisionTek_GeForce_256_Edit.61df69e527bc7.png?auto=format,compress&fit=max&q=45&w=640&width=640" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="zoom-in-out">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbo5NrgGJk_GEQWCXbc6j7O3EWmlEv4SqYJw&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="zoom-in-out">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJq-RXED8OqHvhC_Pv1Pn351VDMvRLZE8ibxZtdfYHOzv6qraRkI1_pQ1wMSQ7sdIFAkY&usqp=CAU" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+            <div class="box" data-aos="fade-left">
+                <img class="bcs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdlfAw_s_sRMV2K3qh-eB9F1dBZzeWAYUhKg&s" alt="">
+                <h2>Graphics Cards and Desktops</h2>
+                <p>Shop Now <img class="rs" src="https://icons.veryicon.com/png/o/miscellaneous/background-basic-version-icon-library/34-right-side.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+    <div class="train">
+        <div class="cen">
+            <div class="im" data-aos="slide-right">
+                <img src="https://media.istockphoto.com/id/2156675427/ru/%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE/hispanic-latin-american-couple-software-engineer-developer-use-computer-work-on-program.jpg?s=640x640&k=20&c=iBL_DFCwQBJFviJDVSEi82cVnGnRUURPkuZy-l25QPA=" alt="">
+            </div>
+            <div class="gtr" data-aos="slide-left">
+                <h1>NVIDIA Deep <br>Learning Institute</h1>
+                <p>Education and Training Solutions to Solve the World's Most Challenging Problems</p>
+                <button>Get Online Training</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="lo">
+            <img src="https://www.systex.com.hk/images/pagebuilderck/newLOGO_Nvidia2_320x154px.png" alt="">
+        </div>
+        <div class="us">
+            <h1>USA - United States</h1>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
