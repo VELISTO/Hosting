@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: rgb(36, 36, 49);
+        }
+
+        header {
+            background-color: rgb(48, 48, 65);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .se {
+            background-color: rgb(48, 48, 65);
+            height: 50px;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            margin: 100px 30px;
+            border-radius: 5px;
+        }
+
+        .se img {
+            height: 70%;
+            margin-left: 10px;
+        }
+
+        .se input {
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: rgb(48, 48, 65);
+            color: white;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .con {
+            display: grid;
+            grid-template-columns: repeat(4, 2fr);
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+            margin: 0 30px 200px 30px;
+        }
+
+        .box {
+            width: 100%;
+            height: 250px;
+            background-color: rgb(48, 48, 65);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .box h1 {
+            font-size: 22px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 60%;
+        }
+
+        @media (max-width: 1185px) {
+            .un {
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .box h1 {
+                margin-left: 10px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h2 {
+                font-size: 18px;
+            }
+
+            .con {
+                grid-template-columns: repeat(2, 4fr);
+                margin: 0 30px 100px 30px;
+            }
+
+            .box {
+                width: 100%;
+            }
+
+            .se {
+                width: 90%;
+                margin: 50px 30px;
+            }
+        }
+
+        @media (max-width: 426px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header h2 {
+                font-size: 14px;
+            }
+
+            .con {
+                grid-template-columns: repeat(2, 4fr);
+                margin: 0 30px 100px 30px;
+            }
+
+            .box {
+                width: 100%;
+                height: 130px;
+            }
+
+            .box h1 {
+                margin-left: 0px;
+                font-size: 12px;
+            }
+
+            .box img {
+                width: 100%;
+                height: 68%;
+            }
+
+            .se {
+                width: 90%;
+                height: 30px;
+                margin: 50px 15px;
+            }
+
+            .se input {
+                font-size: 10px;
+                margin-left: 20px;
+            }
+
+            .se img {
+                height: 50%;
+            }
+        }
+
+        @media (max-width: 376px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header h2 {
+                font-size: 13px;
+            }
+
+            .con {
+                grid-template-columns: repeat(1, 8fr);
+                margin: 0 30px 70px 30px;
+            }
+
+            .box {
+                width: 60%;
+                height: 120px;
+                margin-left: 20%;
+            }
+
+            .box h1 {
+                margin-left: 0px;
+                font-size: 11px;
+            }
+
+            .box img {
+                width: 100%;
+                height: 68%;
+            }
+
+            .se {
+                width: 89%;
+                height: 30px;
+                margin: 30px 15px;
+            }
+
+            .se input {
+                font-size: 10px;
+                margin-left: 20px;
+            }
+
+            .se img {
+                height: 50%;
+            }
+        }
+
+        @media (max-width: 321px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header h2 {
+                font-size: 11px;
+            }
+
+            .con {
+                grid-template-columns: repeat(1, 8fr);
+                margin: 0 30px 70px 30px;
+            }
+
+            .box {
+                width: 60%;
+                height: 120px;
+                margin-left: 20%;
+            }
+
+            .box h1 {
+                margin-left: 0px;
+                font-size: 10px;
+            }
+
+            .box img {
+                width: 100%;
+                height: 68%;
+            }
+
+            .se {
+                width: 87%;
+                height: 20px;
+                margin: 30px 15px;
+            }
+
+            .se input {
+                font-size: 8px;
+                margin-left: 20px;
+            }
+
+            .se img {
+                height: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Where in the world?</h2>
+        <h2>Dark Mode</h2>
+    </header>
+    <div class="se">
+        <img src="https://cdn-icons-png.flaticon.com/512/1086/1086916.png" alt="">
+        <input type="text" placeholder="Search for a country...">
+    </div>
+    <div class="con">
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/2560px-Flag_of_Germany.svg.png"
+                alt="">
+            <h1>Germany</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/2560px-Flag_of_the_United_States.svg.png"
+                alt="">
+            <h1 class="un">United States of America</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/250px-Flag_of_Brazil.svg.png"
+                alt="">
+            <h1>Brazil</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/960px-Flag_of_Iceland.svg.png?20200111183240"
+                alt="">
+            <h1>Iceland</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg"
+                alt="">
+            <h1>Afghanistan</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Flag_of_%C3%85land.svg/2560px-Flag_of_%C3%85land.svg.png"
+                alt="">
+            <h1>Aland Islands</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/2560px-Flag_of_Albania.svg.png"
+                alt="">
+            <h1>Albanis</h1>
+        </div>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/1200px-Flag_of_Algeria.svg.png"
+                alt="">
+            <h1>Algeria</h1>
+        </div>
+    </div>
+</body>
+
+</html>
