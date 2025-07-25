@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        header {
+            height: 80px;
+            background-color: rgb(41, 41, 83);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .men {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .men a {
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            transition: 0.5s ease;
+        }
+        .men a:hover {
+            color: orangered;
+        }
+
+        .sts {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .se {
+            background-color: rgb(55, 55, 107);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .se img {
+            width: 30px;
+            margin: 10px;
+        }
+
+        .se input {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        select {
+            background-color: rgb(55, 55, 107);
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .back {
+            background-image: url('https://pw.artfile.me/wallpaper/21-06-2015/650x366/counter-strike-global-offensive-video-ig-942608.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 800px;
+            width: 100%;
+        }
+
+        .upd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .uig {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .upd h1 {
+            color: white;
+            margin-bottom: 100px;
+        }
+
+        .op {
+            width: 370px;
+            height: 250px;
+        }
+
+        .champ {
+            background-color: rgb(48, 48, 48);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px 50px;
+            flex-direction: column;
+        }
+
+        .pgl {
+            width: 700px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .inf {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        footer {
+            background-color: rgb(41, 41, 83);
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        footer img {
+            width: 60px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="men">
+            <a href="">BLOG</a>
+            <a href="">UPDATES</a>
+            <a href="">RESOURCES</a>
+            <a href="">COMMUNITY</a>
+        </div>
+        <div class="sts">
+            <div class="se">
+                <input type="text">
+                <img src="https://cdn-icons-png.flaticon.com/512/1086/1086916.png" alt="">
+            </div>
+            <select name="lang" id="">
+                <option value="">English</option>
+                <option value="">Русский</option>
+                <option value="">Gitler lang</option>
+            </select>
+        </div>
+    </header>
+    <div class="back"></div>
+    <div class="upd">
+        <h1>MAJOR UPDATES</h1>
+        <div class="uig">
+            <i class="fa-solid fa-angle-left" style="color: #ffffff; width: 100px;"></i>
+            <img class="op" src="https://cdn.akamai.steamstatic.com/apps/csgo/images/blog/riptide_blog_2.png" alt="">
+            <img class="op" src="https://cdn.akamai.steamstatic.com/apps/csgo/images/operationshatteredweb/top_bg.jpg"
+                alt="">
+            <img class="op"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrOBajy9j2pd1GhnCV07LgfK1AvPzIFpvYQ&s"
+                alt="">
+            <i class="fa-solid fa-angle-right" style="color: #ffffff; width: 100px;"></i>
+        </div>
+    </div>
+    <div class="champ">
+        <div class="pgl">
+            <h2>PGL Antwerp 2022 Champions!</h2>
+            <div class="inf">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL29RW3ucRFEOdwXY6yj1DKKTCL_FkK42PQA&s"
+                    alt="">
+                <p>This weekend, thousands of screaming fans in Antwerp and millions of viewers around the world
+                    witnessed the crowning of a new Major Champion. Congratulations to FaZe Clan who proved to be an
+                    unstoppable force, taking the Grand Final 2-0. <br>we’re releasing the champions autograph capsule,
+                    featuring autograph stickers in paper, glitter, holo, and gold. Celebrate rain, karrigan, broky,
+                    ropz, and Twistzz by supporting them in style–50% of the proceeds are shared with the</p>
+            </div>
+        </div>
+        <div class="pgl">
+            <h2>The stage is set in Antwerp</h2>
+            <div class="inf">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-F1lW3dB0QzrRZTMAcyNo1RZ-7dBzz4fIWQ&s"
+                    alt="">
+                <p>The Legends stage was a brutal test, but eight teams survived and earned their place on the main
+                    stage. Congratulations to Team Spirit, ENCE, Copenhagen Flames, FaZe, FURIA, Heroic, Natus Vincere,
+                    and Ninjas in Pyjamas. They’ll play out the rest of this event in front of the roaring crowds in
+                    Antwerp. Best of luck to all! <br>Matches start Thursday, so you still have a few hours to make your
+                    picks in the Pick’Em Challenge. Earn souvenir tokens (or purchase some more), and support for your
+                    favorite teams</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="l">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMW6SF5Jg1L5rfWjyRXbqEDXqkJgrHZAxisw&s"
+                alt="">
+        </div>
+        <div class="men">
+            <a href="">BLOG</a>
+            <a href="">UPDATES</a>
+            <a href="">RESOURCES</a>
+            <a href="">COMMUNITY</a>
+        </div>
+    </footer>
+</body>
+
+</html>
