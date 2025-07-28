@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+   * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+   }
+
+   header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 180px;
+   }
+
+   .l img {
+      width: 130px;
+   }
+
+   .men {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+   }
+
+   .lin {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+   }
+
+   .lin a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: 0.2s ease;
+   }
+
+   .lin a:hover {
+      color: rgb(160, 160, 160);
+   }
+
+   .apl {
+      display: none;
+      overflow: hidden;
+   }
+
+   .apl img {
+      width: 20px;
+   }
+
+   .dem button {
+      background-color: rgb(183, 31, 59);
+      color: white;
+      font-weight: bold;
+      font-size: 17px;
+      padding: 15px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+   }
+
+   .dem button:hover {
+      background-color: rgb(211, 16, 51);
+      box-shadow: 0 3px 2px rgba(128, 128, 128, 0.69);
+   }
+
+   .tel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 200px;
+   }
+
+   .info {
+      width: 400px;
+   }
+
+   .ifr {
+      width: 400px;
+   }
+
+   .ifr h1 {
+      font-size: 36px;
+      color: rgb(38, 83, 139);
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 20px;
+   }
+
+   .ifr p {
+      font-size: 15px;
+      color: rgb(38, 83, 139);
+   }
+
+   .info h1 {
+      font-size: 44px;
+      color: rgb(38, 83, 139);
+      font-family: 'Courier New', Courier, monospace;
+   }
+
+   .tim img {
+      width: 400px;
+   }
+
+   .cim img {
+      width: 400px;
+   }
+
+   .cbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 100px 200px;
+   }
+
+   .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .card img {
+      width: 100px;
+   }
+
+   .card h3 {
+      font-size: 15px;
+      color: rgb(38, 83, 139);
+   }
+
+   footer {
+      background-color: rgb(19, 25, 33);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 100px;
+   }
+
+   .lmen {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+   }
+
+   .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+   }
+
+   .links a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s ease;
+   }
+
+   .links a:hover {
+      color: rgb(182, 182, 182);
+   }
+
+   .soc {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+   }
+
+   .soc img {
+      width: 40px;
+      filter: invert(1);
+   }
+
+   @media (max-width: 1025px) {
+      header {
+         padding: 10px 80px;
+      }
+
+      .tel {
+         padding: 100px 100px;
+      }
+
+      .info {
+         width: 300px;
+      }
+
+      .info h1 {
+         font-size: 34px;
+      }
+
+      .ifr {
+         width: 300px;
+      }
+
+      .ifr h1 {
+         font-size: 30px;
+      }
+
+      .ifr p {
+         font-size: 12px;
+      }
+
+      .tim img {
+         width: 300px;
+      }
+
+      .cim img {
+         width: 300px;
+      }
+
+      .lin a {
+         font-size: 12px;
+      }
+
+      .links a {
+         font-size: 12px;
+      }
+
+      .dem button {
+         font-size: 14px;
+         padding: 11px;
+      }
+
+      .cbox {
+         padding: 100px 100px;
+      }
+
+      .card img {
+         width: 50px;
+      }
+
+      .card h3 {
+         font-size: 11px;
+      }
+
+      .soc img {
+         width: 30px;
+      }
+   }
+
+   @media (max-width: 700px) {
+      header {
+         padding: 10px 80px;
+      }
+
+      .tel {
+         padding: 100px 100px;
+         flex-direction: column;
+         gap: 50px;
+      }
+
+      .info {
+         width: 300px;
+      }
+
+      .info h1 {
+         font-size: 30px;
+      }
+
+      .ifr {
+         width: 300px;
+      }
+
+      .ifr h1 {
+         font-size: 27px;
+      }
+
+      .ifr p {
+         font-size: 10px;
+      }
+
+      .tim img {
+         width: 250px;
+      }
+
+      .cim img {
+         width: 250px;
+      }
+
+      .lin a {
+         font-size: 10px;
+      }
+
+      .links a {
+         font-size: 10px;
+      }
+
+      .dem button {
+         font-size: 11px;
+         padding: 7px;
+      }
+
+      .cbox {
+         padding: 50px 100px;
+      }
+
+      .card img {
+         width: 50px;
+      }
+
+      .card h3 {
+         font-size: 11px;
+      }
+
+      .soc img {
+         width: 20px;
+      }
+
+      footer {
+         padding: 10px 50px;
+      }
+
+      .l img {
+         width: 100px;
+      }
+   }
+
+   @media (max-width: 436px) {
+      header {
+         padding: 10px 40px;
+      }
+
+      .men {
+         display: none;
+      }
+
+      .apl {
+         display: block;
+      }
+
+      .tel {
+         padding: 50px 70px;
+         flex-direction: column;
+         gap: 50px;
+      }
+
+      .info {
+         width: 250px;
+      }
+
+      .info h1 {
+         font-size: 26px;
+      }
+
+      .ifr {
+         width: 250px;
+      }
+
+      .ifr h1 {
+         font-size: 22px;
+      }
+
+      .ifr p {
+         font-size: 7px;
+      }
+
+      .tim img {
+         width: 200px;
+      }
+
+      .cim img {
+         width: 200px;
+      }
+
+      .lin a {
+         font-size: 8px;
+      }
+
+      .links {
+         flex-direction: column;
+         margin-bottom: 50px;
+      }
+
+      .links a {
+         font-size: 8px;
+      }
+
+      .dem button {
+         font-size: 9px;
+         padding: 5px;
+      }
+
+      .cbox {
+         padding: 50px 100px;
+         flex-direction: column;
+         justify-content: space-around;
+         align-items: center;
+         gap: 40px;
+      }
+
+      .card img {
+         width: 50px;
+      }
+
+      .card h3 {
+         font-size: 9px;
+      }
+
+      .soc {
+         flex-direction: column;
+      }
+
+      .soc img {
+         width: 20px;
+      }
+
+      footer {
+         padding: 10px 0px;
+         flex-direction: column;
+         justify-content: center;
+      }
+
+      .lmen {
+         flex-direction: column;
+         gap: 20px;
+      }
+
+      .l img {
+         width: 100px;
+      }
+   }
+</style>
+
+<body>
+   <header>
+      <div class="l">
+         <img src="https://waimaoxpt.com/wp-content/uploads/2025/03/PayPal-front-image.png" alt="">
+      </div>
+      <div class="men">
+         <div class="lin">
+            <a href="">Pricing</a>
+            <a href="">About</a>
+            <a href="">Contract</a>
+         </div>
+         <div class="dem">
+            <button>Schedule a Demo</button>
+         </div>
+      </div>
+      <div class="apl">
+         <img src="https://cdn-icons-png.flaticon.com/512/20/20563.png" alt="">
+      </div>
+   </header>
+   <div class="tel">
+      <div class="info">
+         <h1>Start building with our APIs for absolutely free.</h1>
+      </div>
+      <div class="tim">
+         <img
+            src="https://www.americanexpress.com/content/dam/amex/us/services/peer-to-peer/send-and-split/Send_split_Sendpg_Header_MOB2x.png"
+            alt="">
+      </div>
+   </div>
+   <div class="tel">
+      <div class="cim">
+         <img src="https://blog.droxic.com/wp-content/uploads/2023/03/image-2-964x1024.png" alt="">
+      </div>
+      <div class="ifr">
+         <h1>Easy to implement</h1>
+         <p>Our API comes with just a few lines of code. You’ll be up and running in no time. We built our documentation
+            page to integrate payments functionality with ease.</p>
+      </div>
+   </div>
+   <div class="cbox">
+      <div class="card">
+         <img
+            src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/money-circle-green-3-512.png"
+            alt="">
+         <h3>Personal Finances</h3>
+      </div>
+      <div class="card">
+         <img
+            src="https://png.pngtree.com/png-vector/20220821/ourmid/pngtree-bank-icon-circle-richment-banking-vector-png-image_19626580.png"
+            alt="">
+         <h3>Banking & Coverage</h3>
+      </div>
+      <div class="card">
+         <img
+            src="https://cdn4.iconfinder.com/data/icons/iconoid-business-filled-line/32/business_finance_consumer_terget_money-512.png"
+            alt="">
+         <h3>Consumer Payments</h3>
+      </div>
+   </div>
+   <footer>
+      <div class="lmen">
+         <div class="l">
+            <img src="https://waimaoxpt.com/wp-content/uploads/2025/03/PayPal-front-image.png" alt="">
+         </div>
+         <div class="links">
+            <a href="">Pricing</a>
+            <a href="">About</a>
+            <a href="">Contract</a>
+         </div>
+      </div>
+      <div class="soc">
+         <img src="https://img.icons8.com/m_rounded/512/facebook-new.png" alt="">
+         <img src="https://cdn.creazilla.com/icons/7911121/twitter-icon-md.png" alt="">
+         <img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="">
+      </div>
+   </footer>
+</body>
+
+</html>
