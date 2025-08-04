@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="https://evarugs.ru/wp-content/uploads/2024/09/logo.svg">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    header {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+    }
+    .l a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+    .l a img {
+        width: 70px;
+    }
+    .l a h1 {
+        color: black;
+        font-style: italic;
+    }
+    .lin {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+    }
+    .lin a {
+        font-size: 17px;
+        text-decoration: none;
+        color: rgb(51, 51, 51);
+    }
+    .ord {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 100px;
+    }
+    .orf {
+        width: 600px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 50px;
+        flex-direction: column;
+    }
+    .orf h1 {
+        font-size: 44px;
+    }
+    .orf button {
+        background: linear-gradient(to right, rgb(189, 1, 132) 40%, blue);
+        padding: 15px 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+    .orf button:hover {
+        background: linear-gradient(to right, rgb(189, 1, 132) 10%, blue);
+    }
+
+    .orf button:active {
+        transform: scale(105%);
+    }
+    .wrug {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .wrug h1 {
+        font-size: 47px;
+        font-weight: normal;
+        margin: 100px 0;
+    }
+    span {
+        color: transparent;
+        background: linear-gradient( rgb(189, 1, 132) 40%, blue);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .bc {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+    }
+    .box {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 330px;
+        height: 390px;
+        border: 1px solid black;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px gainsboro;
+        margin-bottom: 100px;
+    }
+    .box img {
+        width: 100%;
+    }
+    .box h2 {
+        font-size: 30px;
+        margin: 25px 15px 20px 15px;
+    }
+    .box p {
+        margin: 0 15px 15px 15px;
+        font-size: 15px;
+        color: rgb(85, 85, 85); 
+    }
+    .pan {
+        background: linear-gradient(to right, rgb(212, 171, 212), rgb(219, 219, 230));
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 0;
+        margin: 100px 0;
+    }
+    .rec {
+        background-color: white;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 0 20px;
+        box-shadow: 1px 1px 10px rgb(222, 222, 222);
+    }
+    .kek {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .kek img {
+        position: relative;
+        top: 40px;
+        width: 90px;
+        border: 1px solid purple;
+        border-radius: 50px;
+        box-shadow: 0 0 15px rgb(98, 98, 98);
+    }
+    .rec p {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .line {
+        width: 50%;
+        height: 1.7px;
+        background: linear-gradient(to right, rgb(189, 1, 132) 40%, blue);
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+    }
+    .soc {
+        height: 100px;
+        width: 280px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .soc img {
+        width: 80px;
+    }
+    
+    .soc h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    form {
+        z-index: 22;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #00000038;
+        backdrop-filter: blur(16px);
+    }
+    .form-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .inp {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .inp input {
+        width: 250px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+    .inp textarea {
+        width: 545px;
+        height: 100px;
+        font-size: 12px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+        resize: none;
+    }
+    .form-container button {
+        background: linear-gradient(to right, rgb(189, 1, 132) 10%, blue);
+        padding: 10px 20px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    @media (max-width: 1200px) {
+        .l a img {
+        width: 50px;
+        }
+        .l a h1 {
+            color: black;
+            font-size: 25px;
+            font-style: italic;
+        }
+        .orf {
+            width: 400px;
+        }
+        .orf h1 {
+            font-size: 36px;
+        } 
+        .orf button {
+            padding: 10px 15px;
+            font-size: 20px;
+        }
+        .imo img {
+            width: 400px;
+        }
+        .wrug h1 {
+            font-size: 40px;
+        }
+        .bc {
+            gap: 20px;
+        }
+        .box {
+            width: 280px;
+            height: 350px;
+        }   
+        .box h2 {
+            font-size: 24px;
+        }
+        .box p {
+            font-size: 12px;
+        } 
+        .kek img {
+            width: 70px;
+        }
+        .rec {
+            height: 120px;
+        }
+        .rec p {
+            font-size: 12px;
+        }
+        .na {
+            font-size: 12px;
+        }
+        footer {
+            padding: 20px 40px;
+        }
+        .soc {
+            width: 230px;
+        }
+        .soc h3 {
+            font-size: 16px;
+        }   
+        .soc img {
+            width: 40px;
+        }
+        .soc p {
+            font-size: 13px;
+        }   
+    }
+    @media (max-width: 1024px) {
+        .l a img {
+           width: 50px;
+        }
+        .l a h1 {
+            color: black;
+            font-size: 25px;
+            font-style: italic;
+        }
+        .orf {
+            width: 300px;
+            gap: 20px;
+        }
+        .orf h1 {
+            font-size: 32px;
+        } 
+        .orf button {
+            padding: 10px 15px;
+            font-size: 17px;
+        }
+        .imo img {
+            width: 300px;
+        }
+        .wrug h1 {
+            font-size: 37px;
+        }
+        .bc {
+            gap: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 270px;
+        }   
+        .box h2 {
+            font-size: 20px;
+            margin: 15px 10px 10px 10px;
+        }
+        .box p {
+            font-size: 10px;
+            margin: 0 10px 10px 10px;
+        }   
+        .kek img {
+            width: 60px;
+        }
+        .rec {
+            height: 130px;
+        }
+        .rec p {
+            font-size: 9px;
+        }
+        .na {
+            font-size: 9px;
+        }
+        footer {
+            padding: 20px 30px;
+        }
+        .soc {
+            width: 190px;
+        }
+        .soc h3 {
+            font-size: 13px;
+        }   
+        .soc img {
+            width: 40px;
+        }
+        .soc p {
+            font-size: 12px;
+        }   
+        .form-container {
+            gap: 30px;
+        }
+        .inp {
+            gap: 10px;
+        }
+        .inp input {
+            width: 170px;
+            padding: 8px;
+            font-size: 12px;
+        }
+        .inp textarea {
+            width: 370px;
+            height: 80px;
+            font-size: 12px;
+            padding: 8px;
+        }
+        .form-container button {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 768px) {
+        .l a img {
+            width: 30px;
+        }
+        .l a h1 {
+            color: black;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .lin a {
+            font-size: 14px;
+        }
+        .ord {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            gap: 40px;
+        }
+        .orf {
+            width: 270px;
+            gap: 10px;
+        }
+        .orf h1 {
+            font-size: 25px;
+        } 
+        .orf button {
+            padding: 8px 12px;
+            font-size: 15px;
+        }
+        .imo img {
+            width: 240px;
+        }
+        .wrug h1 {
+            font-size: 33px;
+        }
+        .bc {
+            gap: 20px;
+        }
+        .box {
+            width: 180px;
+            height: 250px;
+        }   
+        .box h2 {
+            font-size: 15px;
+            margin: 15px 10px 10px 10px;
+        }
+        .box p {
+            font-size: 10px;
+            margin: 0 10px 10px 10px;
+        }   
+        .kek img {
+            width: 60px;
+        }
+        .rec {
+            height: 130px;
+        }
+        .rec p {
+            font-size: 9px;
+        }
+        .na {
+            font-size: 9px;
+        }
+        footer {
+            padding: 20px 20px;
+        }
+        .soc {
+            width: 170px;
+        }
+        .soc h3 {
+            font-size: 11px;
+        }   
+        .soc img {
+            width: 30px;
+        }
+        .soc p {
+            font-size: 10px;
+        }   
+        .form-container {
+            gap: 30px;
+        }
+        .inp {
+            gap: 10px;
+        }
+        .inp input {
+            width: 170px;
+            padding: 8px;
+            font-size: 12px;
+        }
+        .inp textarea {
+            width: 370px;
+            height: 80px;
+            font-size: 12px;
+            padding: 8px;
+        }
+        .form-container button {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 700px) {
+        .l a img {
+            width: 30px;
+        }
+        .l a h1 {
+            color: black;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .lin a {
+            font-size: 14px;
+        }
+        .ord {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            gap: 40px;
+        }
+        .orf {
+            width: 270px;
+            gap: 10px;
+        }
+        .orf h1 {
+            font-size: 25px;
+        } 
+        .orf button {
+            padding: 8px 12px;
+            font-size: 15px;
+        }
+        .imo img {
+            width: 240px;
+        }
+        .wrug h1 {
+            font-size: 33px;
+        }
+        .bc {
+            gap: 20px;
+        }
+        .box {
+            width: 180px;
+            height: 250px;
+        }   
+        .box h2 {
+            font-size: 15px;
+            margin: 15px 10px 10px 10px;
+        }
+        .box p {
+            font-size: 10px;
+            margin: 0 10px 10px 10px;
+        }   
+        .kek img {
+            width: 60px;
+        }
+        .rec {
+            height: 130px;
+        }
+        .rec p {
+            font-size: 9px;
+        }
+        .na {
+            font-size: 9px;
+        }
+        footer {
+            padding: 20px 20px;
+        }
+        .soc {
+            width: 170px;
+        }
+        .soc h3 {
+            font-size: 11px;
+        }   
+        .soc img {
+            width: 30px;
+        }
+        .soc p {
+            font-size: 10px;
+        }   
+        .form-container {
+            gap: 30px;
+        }
+        .inp {
+            gap: 10px;
+            flex-direction: column;
+        }
+        .inp input {
+            width: 100%;
+            padding: 8px;
+            font-size: 12px;
+        }
+        .inp textarea {
+            width: 100%;
+            height: 80px;
+            font-size: 12px;
+            padding: 8px;
+        }
+        .form-container button {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 590px) {
+        header {
+            padding: 0 20px;
+            justify-content: center;
+        }
+        .l a img {
+             width: 30px;
+        }
+        .l a h1 {
+            color: black;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .lin a {
+            font-size: 14px;
+            display: none;
+        }
+        .ord {
+            display: flex;
+            align-items: center;
+            padding: 20px 20px;
+            gap: 40px;
+            flex-direction: column;
+        }
+        .orf {
+            width: 200px;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .orf h1 {
+            font-size: 25px;
+            text-align: center;
+        } 
+        .orf button {
+            padding: 8px 12px;
+            font-size: 15px;
+        }
+        .imo img {
+            width: 240px;
+        }
+        .wrug h1 {
+            font-size: 28px;
+            margin: 50px 0;
+        }
+        .bc {
+            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+        }
+        .box {
+            width: 240px;
+            height: 270px;
+            margin-bottom: 20px;
+        }   
+        .box h2 {
+            font-size: 15px;
+            margin: 15px 10px 10px 10px;
+        }
+        .box p {
+            font-size: 10px;
+            margin: 0 10px 10px 10px;
+        }   
+        .pan {
+            padding: 50px 0;
+            flex-direction: column;
+            align-items: center;
+        }
+        .kek {
+            width: 80%;
+        }
+        .kek img {
+            width: 60px;
+        }
+        .rec {
+            height: 140px;
+        }
+        .rec p {
+            font-size: 12px;
+        }
+        .na {
+            font-size: 12px;
+        }
+        footer {
+            padding: 20px 20px;
+            flex-direction: column;
+        }
+        .soc {
+            width: 170px;
+        }
+        .soc h3 {
+            font-size: 11px;
+        }   
+        .soc img {
+            width: 30px;
+        }
+        .soc p {
+            font-size: 10px;
+        }   
+        .form-container {
+            gap: 30px;
+        }
+        .form-container h1 {
+            font-size: 24px;
+            margin-bottom: 0px;
+        }
+        .inp {
+            gap: 10px;
+        }
+        .inp input {
+            width: 100%;
+            padding: 8px;
+            font-size: 12px;
+        }
+        .inp textarea {
+            width: 100%;
+            height: 80px;
+            font-size: 12px;
+            padding: 8px;
+        }
+        .form-container button {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+</style>
+<body>
+    <header>
+        <div class="l">
+            <a href=""><img src="https://evarugs.ru/wp-content/uploads/2024/09/logo.svg" alt=""><h1>EVARUGS</h1></a>
+        </div>
+        <div class="lin">
+            <a href="">отзывы</a>
+            <a href="">что это?</a>
+            <a href="">контакты</a>
+        </div>
+    </header>
+    <div class="ord">
+        <div class="orf">
+            <h1>Инновационные коврики для автомобиля</h1>
+            <button class="order-button">ЗАКАЗАТЬ</button>
+        </div>
+        <div class="imo">
+            <img src="https://evarugs.ru/wp-content/uploads/2024/09/kovriki-2.png" alt="">
+        </div>
+    </div>
+    <div class="wrug">
+        <h1>Что такое <span>EVA</span> коврики?</h1>
+        <div class="bc">
+            <div class="box">
+                <img src="https://evarugs.ru/wp-content/uploads/2024/09/about-1.jpg" alt="">
+                <h2>МАТЕРИАЛ</h2>
+                <p>Коврики EVA всесезонные и отличаются уникальной поверхностью материала с ячейками ромбовидной формы. Из-за чего вода не проливается при изъятии ковра и не плещется при езде. Коврики воду не пропускают.</p>
+            </div>
+            <div class="box">
+                <img src="https://evarugs.ru/wp-content/uploads/2024/09/about-2.jpg" alt="">
+                <h2>ОТЛИЧИЯ</h2>
+                <p>Резиновые коврики загибаются и лезут на педали. EVA коврики такого не допустят! Специальные липучки держат его в одном положении. При желании, для водителя устанавливается подпятник из рельефного алюминия.</p>
+            </div>
+            <div class="box">
+                <img src="https://evarugs.ru/wp-content/uploads/2024/09/about-3.jpg" alt="">
+                <h2>РАСЦВЕТКА</h2>
+                <p>Автомобильные коврики EVA можно заказать и в индивидуальных размерах и в разных цветах, которые комбинируется на выбор покупателя с такими же цветами окантовочной полипропиленовой ременной ленты.</p>
+            </div>
+        </div>
+    </div>
+    <div class="pan">
+        <div class="kek">
+            <img src="https://evarugs.ru/wp-content/uploads/2024/09/avatar-1-1.png" alt="">
+            <div class="rec">
+                <p>Коврики супер!!! Качество на высшем уровне!!! Удачи и побольше заказов вам!!! Большое спасибо!</p>
+                <div class="line"></div>
+                <div class="na">Константин В.</div>
+            </div>
+        </div>
+        <div class="kek">
+            <img src="https://evarugs.ru/wp-content/uploads/2024/09/avatar-2-1.png" alt="">
+            <div class="rec">
+                <p>Покупала у ребят коврики для Хундай солярис в подарок молодому человеку. Все очень понравилось. Буду советовать только вас.</p>
+                <div class="line"></div>
+                <div class="na">Вера К.</div>
+            </div>
+        </div>
+        <div class="kek">
+            <img src="https://evarugs.ru/wp-content/uploads/2024/09/avatar-3-1.png" alt="">
+            <div class="rec">
+                <p>Спасибо, все приехало, поставил. Результатом доволен, в машине супер! Заказывал на Ниссан.</p>
+                <div class="line"></div>
+                <div class="na">Николай П.</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="soc">
+            <h3>МЫ В СОЦИАЛЬНЫХ СЕТЯХ</h3>
+            <img src="https://i.pinimg.com/originals/b4/d6/87/b4d68736555786c8efdf4cc4984bbaba.jpg" alt="">
+        </div>
+        <div class="soc">
+            <h3>КОНТАКТНЫЕ ТЕЛЕФОНЫ</h3>
+            <p>+375 29 292-29-29 (VEL)</p>
+            <p>+375 33 333-33-33 (МТС)</p>
+        </div>
+        <div class="soc">
+            <h3>О НАС</h3>
+            <p>Индивидуальное изготовление EVA ковриков для вашего автом</p>
+        </div>
+    </footer>
+    <form action="">
+        <div class="form-container">
+            <h1>Форма заявки</h1>
+            <div class="inp">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Ваш e-mail" required>
+                <textarea placeholder="Ваше сообщение (марка автомобиля, цвет ковриков, номер телефона)" rows="3"></textarea>
+            </div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+</body>
+<script>
+    const orderButton = document.querySelector('.order-button');
+    const form = document.querySelector('form');
+
+    function toggleForm() {
+        form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
+    }
+    orderButton.addEventListener('click', toggleForm);
+    form.addEventListener('click', (e) => {
+        if (e.target === form) {
+            toggleForm();
+        }
+    });
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        alert("Заявка отправлена!");
+        form.style.display = "none";
+        form.reset();
+    };
+</script>
+</html>
