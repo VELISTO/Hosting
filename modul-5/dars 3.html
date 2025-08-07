@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Математика</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: space-between;
+    }
+    .mp {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+    }
+    .cb {
+      position: fixed;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-size: 50px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .cb:hover {
+      background-color: rgb(20, 20, 20);
+    }
+    .yn {
+      position: fixed;
+      right: 0;
+      display: none;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .yes {
+      width: 100%;
+      height: 50%;
+      background-color: rgb(16, 227, 16);
+      color: white;
+      font-size: 50px;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .yes:hover {
+      background-color: rgb(27, 185, 27);
+    }
+    .no {
+      width: 100%;
+      height: 50%;
+      background-color: rgb(255, 0, 0);
+      color: white;
+      font-size: 50px;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .no:hover {
+      background-color: rgb(200, 15, 15);
+    }
+    .calc {
+      width: 50%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+    }
+  </style>
+  <body>
+    <div class="mp" id="mp">
+      <h1 id="hh">Нажмите старт для продолжения 👉</h1>
+    </div>
+    <div class="calc" id="calc">
+      <h1 id="com"></h1>
+      <h2 id="capa" style="display: none"></h2>
+      <h2 id="case" style="display: none"></h2>
+      <h2 id="fica" style="display: none"></h2>
+      <h3 id="res"></h3>
+    </div>
+    <button style="display: block" class="cb" id="nest" onclick="ns()">
+      СТАРТ
+    </button>
+    <button style="display: none" class="cb" id="gene" onclick="showr()">
+      Сгенерировать рандомное число
+    </button>
+    <button style="display: none" class="cb" id="coni" onclick="choi()">
+      Продолжить
+    </button>
+    <div class="yn" id="yn">
+      <button class="yes" onclick="yes()">ДА</button>
+      <button class="no" onclick="no()">НЕТ</button>
+    </div>
+    <button style="display: none" class="cb" id="nc" onclick="relo()">
+      ОК
+    </button>
+    <button style="display: none" class="cb" id="nof" onclick="doi()">
+      ОК<br />Продолжаем
+    </button>
+    <button style="display: none" class="cb" id="fs" onclick="frs()">
+      Ага
+    </button>
+    <button style="display: none" class="cb" id="nesx" onclick="sns()">
+      Хмм
+    </button>
+    <button style="display: none" class="cb" id="nesy" onclick="fns()">
+      Хмммм
+    </button>
+    <button style="display: none" class="cb" id="fid" onclick="relo()">
+      Спасибо за представление
+    </button>
+  </body>
+  <script>
+    function rand() {
+      return Math.floor(Math.random() * 100) + 1;
+    }
+    var nr = rand();
+    function relo() {
+      return location.reload();
+    }
+    function ns() {
+      document.getElementById("hh").textContent =
+        "Хотите ли вы сгенерировать рандомное чило от 1 до 100?";
+      document.getElementById("nest").style.display = "none";
+      document.getElementById("gene").style.display = "block";
+      document.getElementById("gene").style.fontSize = "43px";
+    }
+    function showr() {
+      document.getElementById("hh").textContent = "Ваше рандомное число: " + nr;
+      document.getElementById("gene").style.display = "none";
+      document.getElementById("coni").style.display = "block";
+    }
+    function choi() {
+      document.getElementById("hh").textContent =
+        "Впереди будут математические действия.\nХотите ли вы продолжить?";
+      document.getElementById("coni").style.display = "none";
+      document.getElementById("yn").style.display = "flex";
+    }
+    function no() {
+      document.getElementById("hh").textContent =
+        "Вы отвергли наше предложение.И теперь сеанс закончен.Нажав ОК вы перезагрузите страницу!";
+      document.getElementById("yn").style.display = "none";
+      document.getElementById("nc").style.display = "block";
+    }
+    function yes() {
+      document.getElementById("hh").textContent =
+        "Так вот, математические действия заключаются в том, что мы сперва будем умножать то рандомное число, а потом делить это число, а после находить остаток от этого числа.";
+      document.getElementById("yn").style.display = "none";
+      document.getElementById("nof").style.display = "block";
+    }
+    function doi() {
+      document.getElementById("com").textContent =
+        "Так начнем, Рандомное число это " + nr + "?";
+      document.getElementById("mp").style.display = "none";
+      document.getElementById("nof").style.display = "none";
+      document.getElementById("fs").style.display = "block";
+      document.getElementById("calc").style.display = "flex";
+    }
+    function frs() {
+      document.getElementById("com").textContent = "Сперва будем умножать.";
+      document.getElementById("capa").style.display = "block";
+      document.getElementById("capa").textContent = nr + " * 2 = " + nr * 2;
+      document.getElementById("res").textContent = "Ответ: " + nr * 2;
+      document.getElementById("fs").style.display = "none";
+      document.getElementById("nesx").style.display = "block";
+    }
+    function sns() {
+      document.getElementById("com").textContent = "А теперь делить";
+      document.getElementById("case").style.display = "block";
+      document.getElementById("case").textContent =
+        nr * 2 + " : 2 = " + (nr * 2) / 2;
+      document.getElementById("res").textContent = "Ответ: " + (nr * 2) / 2;
+      document.getElementById("nesx").style.display = "none";
+      document.getElementById("nesy").style.display = "block";
+    }
+    function fns() {
+      document.getElementById("com").textContent =
+        "И теперь найдем остаток деля это число на 3.";
+      document.getElementById("fica").style.display = "block";
+      document.getElementById("fica").textContent =
+        (nr * 2) / 2 + " % 2 = " + (((nr * 2) / 2) % 3);
+      document.getElementById("res").textContent =
+        "Ответ: " + (((nr * 2) / 2) % 3);
+      document.getElementById("nesy").style.display = "none";
+      document.getElementById("fid").style.display = "block";
+      document.getElementById("fid").style.backgroundColor = "rgb(16, 227, 16)";
+      alert(
+        "В математических действиях мы собрали что\nРандомное число: " +
+          nr +
+          "\nПри умножении вышло: " +
+          nr * 2 +
+          "\nПри делении вышло: " +
+          (nr * 2) / 2 +
+          "\nПри остатке вышло: " +
+          (((nr * 2) / 2) % 3)
+      );
+    }
+  </script>
+</html>
