@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //   // Запрашиваем данные у пользователя
+    //   let inputString = prompt("Введите строку:");
+    //   let inputNumber = prompt("Введите число:");
+    //   let inputBoolean = prompt("Введите булево значение (true или false):");
+    //
+    //   // Проверка строки (не пустая строка)
+    //   let stringCorrect = false;
+    //   if (inputString !== null && inputString.trim() !== "") {
+    //   stringCorrect = true;
+    //   }
+    //
+    //   // Проверка числа
+    //   let numberCorrect = false;
+    //   if (!isNaN(Number(inputNumber))) {
+    //   numberCorrect = true;
+    //   }
+    //
+    //   // Проверка булевого (true или false, без учёта регистра)
+    //   let booleanCorrect = false;
+    //   let lowerBool = inputBoolean.toLowerCase();
+    //   if (lowerBool === "true" || lowerBool === "false") {
+    //   booleanCorrect = true;
+    //   }
+    //
+    //   // Готовим сообщение
+    //   let message = "Результаты ввода:\n";
+    //
+    //   if (stringCorrect) {
+    //   message += "Строка введена правильно.\n";
+    //   } else {
+    //   message += "Строка введена НЕПРАВИЛЬНО.\n";
+    //   }
+    //
+    //   if (numberCorrect) {
+    //   message += "Число введено правильно.\n";
+    //   } else {
+    //   message += "Число введено НЕПРАВИЛЬНО.\n";
+    //   }
+    //
+    //   if (booleanCorrect) {
+    //   message += "Булево значение введено правильно.\n";
+    //   } else {
+    //   message += "Булево значение введено НЕПРАВИЛЬНО.\n";
+    //   }
+    //
+    //   // Показываем результат
+    //   alert(message);
+
+    let str = prompt("String typedai malumot kiritig");
+    let num = prompt("Number typedai malumot kiritig");
+    let bool = prompt("boolean typedai malumot kiritig");
+    let con = confirm(
+      "hamma malumotlarni tog'ri kiritilganizga ishonchingiz komilmi?"
+    );
+    var numb =
+      "\nSiz kiritgan " + num + " raqam(lar) number typega tegishli emas!!!";
+
+    let hnum = /\d/.test(str);
+
+    if (hnum === false) {
+      var tex = "Siz kiritgan " + str + " sozi string typega tegishli";
+    } else {
+      var tex = "Siz kiritgan " + str + " sozi string typega tegishli emas!!!";
+    }
+    if (!isNaN(Number(num))) {
+      var numb = "\nSiz kiritgan " + num + " raqam(lar) number typega tegishli";
+    } else {
+      var numb =
+        "\nSiz kiritgan " + num + " raqam(lar) number typega tegishli emas!!!";
+    }
+    if (
+      bool === "true" ||
+      bool === "false" ||
+      bool === "True" ||
+      bool === "False"
+    ) {
+      var boo = "\nSiz kiritgan " + bool + " boolean typega tegishli";
+    } else {
+      var boo = "\nSiz kiritgan " + bool + " boolean typega tegishli emas!!!";
+    }
+
+    alert(tex + numb + boo);
+  </script>
+</html>
