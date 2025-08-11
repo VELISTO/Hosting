@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    document.body.style.backgroundColor = "blue";
+    document.body.style.textAlign = "center";
+    const text = prompt("Ismingizni kiriting");
+
+    const h = document.createElement("h1");
+    h.textContent = text;
+
+    h.style.color = "yellow";
+    h.style.textShadow = "1px 1px 2px black";
+    h.style.marginTop = "20%";
+
+    document.body.appendChild(h);
+  </script>
+</html>
