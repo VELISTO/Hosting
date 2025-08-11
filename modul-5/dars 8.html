@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const obj = [
+      "kard",
+      "uylar",
+      "gigabayt",
+      "computer",
+      "sayt",
+      "til",
+      "ekran",
+      "sozlar",
+    ];
+
+    let tob = [];
+    let aob = [];
+
+    for (let i = 0; i < obj.length; i++) {
+      if (obj[i].includes("t")) {
+        tob.push(obj[i]);
+      } else {
+        aob.push(obj[i]);
+      }
+    }
+    console.log(tob);
+    console.log(aob);
+  </script>
+</html>
