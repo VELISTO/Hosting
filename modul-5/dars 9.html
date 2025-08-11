@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    document.body.style.fontFamily = "sans-serif";
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+    document.body.style.backgroundImage =
+      "url(https://cdn-0001.qstv.on.epicgames.com/GprNLVKfyqrEmNlnDr/image/landscape_comp.jpeg)";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
+
+    const name = prompt("Ismingizni kiriting");
+    const scname = prompt("Familiyangizni kiriting");
+    const year = prompt("Yoshingizni kiriting");
+    const chi = prompt(
+      "Ismingiz katta harf yoki kichikligini tanlang\n1) Katta\n2) Kichik"
+    );
+
+    let finalName = name;
+    let finalScname = scname;
+
+    if (chi === "1") {
+      finalName = name.toUpperCase();
+      finalScname = scname.toUpperCase();
+    } else if (chi === "2") {
+      finalName = name.toLowerCase();
+      finalScname = scname.toLowerCase();
+    } else {
+      alert("Iltimos 1 yoki 2 tanlang");
+      location.reload();
+    }
+
+    const box = document.createElement("div");
+    box.style.backgroundColor = "black";
+    box.style.width = "50%";
+    box.style.padding = "30px";
+    box.style.fontSize = "30px";
+    box.style.color = "white";
+    box.style.borderRadius = "30px";
+    box.style.marginTop = "26%";
+    box.style.textAlign = "left";
+
+    box.innerHTML =
+      "1. Ism: " +
+      finalName +
+      "<br>2. Familiya: " +
+      finalScname +
+      "<br>3. Yosh: " +
+      year;
+
+    document.body.appendChild(box);
+  </script>
+</html>
