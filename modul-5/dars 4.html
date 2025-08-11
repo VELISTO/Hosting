@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let text = prompt("Ismingizni kiriting");
+    let letter = prompt("Bironta harf kiriting");
+
+    do {
+        if (letter.length !== 1) {
+            alert("Iltimos 1 harf kiriting");
+        };
+    } while (letter.length !== 1);
+
+    if (text.toLocaleLowerCase().includes(letter.toLocaleLowerCase())) {
+        alert(text + " sozning ichida " + letter + " harfi mavjud.")
+    } else {
+        alert(text + " sozning ichida " + letter + " harfi mavjud emas.")
+    }
+</script>
+</html>
