@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const num = [3, 24, 34, 23, 54, 93, 18, 5, 7, 44];
+
+    let odd = [];
+    let even = [];
+
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] % 2 === 0) {
+        even.push(num[i]);
+      } else {
+        odd.push(num[i]);
+      }
+    }
+    console.log(odd);
+    console.log(even);
+  </script>
+</html>
