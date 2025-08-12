@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: rgb(192, 176, 152);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+    }
+    header img {
+      width: 50px;
+    }
+    .lin {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+    }
+    .links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 100px;
+    }
+    .links a {
+      color: black;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .links a:hover {
+      color: rgb(65, 65, 65);
+      text-decoration: none;
+    }
+    .bbs {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+    }
+    .bbs button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+    }
+    .lm {
+      background-color: rgb(255, 120, 35);
+      color: black;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .lm:hover {
+      background-color: rgb(228, 113, 41);
+      box-shadow: 0 10px 5px -5px gray;
+    }
+    .dm {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s ease;  
+    }
+    .dm:hover {
+      background-color: rgb(78, 78, 78);
+      box-shadow: 0 10px 5px -5px white;
+    }
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      margin-top: 20px;
+    }
+    .abo {
+      height: 400px;
+      width: 360px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .abo p {
+      font-weight: 500;
+    }
+    .abo button {
+      background-color: rgb(255, 120, 35);
+      color: black;
+      font-weight: bold;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      transition: 0.3s ease;
+    }
+    .get:hover {
+      background-color: rgb(228, 113, 41);
+      box-shadow: 0 0 10px rgb(181, 181, 181);
+    }
+    .box img {
+      height: 400px;
+      margin-top: 40px;
+    }
+  </style>
+  <body>
+    <header>
+      <img id="log"
+        src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"
+        alt=""
+      />
+      <div class="lin">
+        <div class="links">
+          <a id="a" href="">Home</a>
+          <a id="af" href="">About us</a>
+          <a id="as" href="">Portfolio</a>
+        </div>
+        <div class="bbs">
+          <button class="lm" id="lm" onclick="lightm()">LightMode</button>
+          <button class="dm" id="dm" onclick="darkm()">DarkMode</button>
+        </div>
+      </div>
+    </header>
+    <div class="box">
+      <div class="abo">
+        <h1>Work that we produce for our clients</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ullam
+          maiores quo magni ex. Sequi vitae accusantium impedit dolorum iusto
+          cupiditate enim illum quo.
+        </p>
+        <button class="get" id="get">Get more details</button>
+      </div>
+      <img src="https://i.redd.it/2y0or3oz48p91.jpg" alt="" />
+    </div>
+  </body>
+  <script>
+    function darkm() {
+      document.getElementById("log").style.filter = "invert(1)";
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      document.getElementById("a").style.color = "white";
+      document.getElementById("af").style.color = "white";
+      document.getElementById("as").style.color = "white";
+      document.getElementById("get").style.color = "white";
+      document.getElementById("get").style.backgroundColor = "rgb(255, 154, 92)";
+      document.getElementById("dm").style.backgroundColor = "rgb(255, 154, 92)";
+      document.getElementById("lm").style.backgroundColor = "gray"
+    }
+    function lightm() {
+      document.getElementById("log").style.filter = "invert(0)";
+      document.body.style.backgroundColor = "rgb(192, 176, 152)";
+      document.body.style.color = "black";
+      document.getElementById("a").style.color = "black";
+      document.getElementById("af").style.color = "black";
+      document.getElementById("as").style.color = "black";
+      document.getElementById("get").style.color = "black";
+      document.getElementById("get").style.backgroundColor = "rgb(255, 120, 35)";
+      document.getElementById("dm").style.backgroundColor = "black";
+      document.getElementById("lm").style.backgroundColor = "rgb(255, 120, 35)";
+    }
+  </script>
+</html>
