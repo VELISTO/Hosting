@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        .con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 80px;
+            margin-top: 10%;
+        }
+        .sin {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .sin input {
+            padding: 20px;
+            width: 300px;
+            height: 10px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+        }
+        .sin button {
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(47, 47, 47);
+            color: white;
+            font-weight: 700;
+        }
+        .adn {
+            background-color: rgb(47, 47, 47);
+            width: 400px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 30px;
+        }
+        .adn button {
+            color: white;
+            background-color: rgb(47, 47, 47);
+            border: none;
+            font-size: 80px;
+            width: 100%;
+        }
+        .fb:active {
+            background-color: red;
+        }
+        .sb:active {
+            background-color: green;
+        }
+        .adn p {
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+        .col {
+            width: 480px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="sin">
+            <input id="num" type="number" placeholder="Enter your number">
+            <button id="sub" onclick="numapl()">Send</button>
+        </div>
+        <div class="adn">
+            <button id="pl" class="fb" onclick="addn(-1)">-</button>
+            <p id="expn">0</p>
+            <button id="mi" class="sb" onclick="addn(1)">+</button>
+        </div>
+        <div class="col">
+            <h1>Select color:</h1>
+            <input id="coch" value="#ffffff" type="color">
+        </div>
+    </div>
+</body>
+<script>
+    let ipnum = document.getElementById("num");
+    let textch = document.getElementById("expn");
+    let colorp = document.getElementById("coch");
+
+    function numapl() {
+        const num = parseInt(ipnum.value);
+        if (!isNaN(num)) {
+            textch.textContent = num;
+        }
+    }
+
+    function addn(n) {
+        const numf = parseInt(textch.textContent);
+        const setn = numf + n;
+        textch.textContent = setn;
+    }
+
+    function colch() {
+        const colf = colorp.value;
+        textch.style.color = colf;
+    }
+
+    colorp.addEventListener("input", colch())
+</script>
+</html>
