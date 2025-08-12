@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        header {
+            height: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 3px 0 5px gray;
+        }
+
+        .l img {
+            width: 160px;
+        }
+
+        .adr a {
+            background-color: rgb(255, 44, 44);
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .adr a button {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 17px;
+            padding: 4px 10px 4px 0;
+        }
+
+        .b1 a {
+            width: 250px;
+        }
+
+        .b2 a button {
+            border-right: 2px solid white;
+        }
+
+        .met {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .met a {
+            font-size: 16px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header a img {
+            width: 20px;
+        }
+
+        .prof {
+            background-color: rgb(219, 219, 219);
+            padding: 10px 13px;
+            border-radius: 10px;
+        }
+
+        .appl {
+            display: none;
+            background-color: rgb(233, 233, 233);
+            border-radius: 5px;
+            padding: 3px;
+            border: 1px solid rgb(137, 137, 137);
+            margin-right: 30px;
+        }
+
+        .appl img {
+            width: 15px;
+        }
+
+        .bi {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bim {
+            width: 90%;
+            margin: 100px 0;
+            border-radius: 40px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section h1 {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 3fr);
+            gap: 40px;
+        }
+
+        .prod {
+            width: 240px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px gray;
+            padding: 20px;
+        }
+
+        .prs {
+            width: 100%;
+        }
+
+        .prod p {
+            color: red;
+        }
+
+        .plus {
+            position: relative;
+            left: 85%;
+            width: 32px;
+            background-color: red;
+            padding: 2px;
+            border-radius: 5px;
+        }
+
+        footer {
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 200px;
+            margin-top: 50px;
+            box-shadow: 1px 1px 5px gray;
+        }
+
+        footer img {
+            width: 110px;
+        }
+
+        @media (max-width: 1250px) {
+            .adr a button {
+                font-size: 16px;
+            }
+
+            .b1 a {
+                width: 200px;
+            }
+
+            .prod {
+                width: 170px;
+            }
+
+            .prod h2 {
+                font-size: 20px;
+            }
+
+            .met {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 1025px) {
+            .l img {
+                width: 120px;
+            }
+
+            .adr a button {
+                font-size: 14px;
+            }
+
+            .b1 a {
+                width: 170px;
+            }
+
+            .prof {
+                padding: 6px 8px;
+            }
+
+            .grid {
+                gap: 40px;
+            }
+
+            .prod {
+                width: 160px;
+                height: 300px;
+            }
+
+            .prod h2 {
+                font-size: 20px;
+            }
+
+            .prod p {
+                font-size: 15px;
+            }
+
+            .met {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 925px) {
+            .l img {
+                width: 100px;
+            }
+
+            .adr a button {
+                font-size: 11px;
+            }
+
+            .adr a img {
+                width: 16px;
+            }
+
+            .b1 a {
+                width: 170px;
+            }
+
+            .prof {
+                padding: 6px 8px;
+            }
+
+            section h1 {
+                font-size: 28px;
+            }
+
+            .grid {
+                gap: 30px;
+            }
+
+            .prod {
+                width: 130px;
+                height: 250px;
+            }
+
+            .prod h2 {
+                font-size: 18px;
+            }
+
+            .prod p {
+                font-size: 14px;
+            }
+
+            .met {
+                gap: 6px;
+            }
+
+            .met a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            .l img {
+                width: 80px;
+            }
+
+            .adr a button {
+                font-size: 9px;
+                padding: 3px 7px 3px 0;
+            }
+
+            .b1 a {
+                width: 140px;
+            }
+
+            .prof {
+                padding: 4px 6px;
+            }
+
+            section h1 {
+                font-size: 26px;
+            }
+
+            .grid {
+                gap: 20px;
+            }
+
+            .prod {
+                width: 100px;
+                height: 200px;
+            }
+
+            .prod h2 {
+                font-size: 14px;
+            }
+
+            .prod p {
+                font-size: 14px;
+            }
+
+            .plus {
+                width: 25px;
+                left: 75%;
+            }
+
+            .met {
+                gap: 6px;
+            }
+
+            .met a {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 624px) {
+            header {
+                padding: 10px 0;
+            }
+
+            .l img {
+                width: 0;
+                display: none;
+            }
+
+            .adr a button {
+                font-size: 9px;
+                padding: 3px 7px 3px 0;
+            }
+
+            .b1 a {
+                width: 140px;
+            }
+
+            .prof {
+                padding: 4px 6px;
+                display: none;
+            }
+
+            section h1 {
+                font-size: 26px;
+            }
+
+            .grid {
+                gap: 20px;
+                grid-template-columns: repeat(3, 4fr);
+            }
+
+            .prod {
+                width: 100px;
+                height: 200px;
+            }
+
+            .prod h2 {
+                font-size: 14px;
+            }
+
+            .prod p {
+                font-size: 14px;
+            }
+
+            .plus {
+                width: 25px;
+                left: 75%;
+            }
+
+            .met {
+                gap: 6px;
+            }
+
+            .met a {
+                font-size: 10px;
+            }
+
+            footer {
+                height: 70px;
+            }
+
+            footer h3 {
+                font-size: 12px;
+            }
+
+            footer img {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 461px) {
+            header {
+                padding: 10px 0;
+            }
+
+            .l img {
+                width: 0;
+                display: none;
+            }
+
+            .adr a button {
+                font-size: 9px;
+                padding: 3px 7px 3px 0;
+            }
+
+            .b1 a {
+                width: 140px;
+            }
+
+            .prof {
+                padding: 4px 6px;
+                display: none;
+            }
+
+            section h1 {
+                font-size: 26px;
+            }
+
+            .grid {
+                gap: 20px;
+                grid-template-columns: repeat(3, 4fr);
+            }
+
+            .prod {
+                width: 80px;
+                height: 160px;
+            }
+
+            .prod h2 {
+                font-size: 12px;
+            }
+
+            .prod p {
+                font-size: 11px;
+            }
+
+            .plus {
+                width: 17px;
+                left: 80%;
+            }
+
+            .met {
+                gap: 4px;
+            }
+
+            .met a {
+                font-size: 9px;
+            }
+
+            footer {
+                height: 70px;
+            }
+
+            footer h3 {
+                font-size: 12px;
+            }
+
+            footer img {
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            header {
+                padding: 5px 0;
+                height: 50px;
+            }
+
+            .l img {
+                width: 0;
+                display: none;
+            }
+
+            .adr a button {
+                font-size: 9px;
+                padding: 3px 4px 3px 0;
+            }
+
+            .b1 a {
+                width: 130px;
+            }
+
+            .b2 {
+                display: none;
+            }
+
+            .appl {
+                display: block;
+            }
+
+            .bim {
+                margin: 50px 0;
+                border-radius: 20px;
+            }
+
+            .prof {
+                padding: 4px 6px;
+                display: none;
+            }
+
+            section h1 {
+                font-size: 22px;
+            }
+
+            .grid {
+                gap: 20px;
+                grid-template-columns: repeat(2, 8fr);
+            }
+
+            .prod {
+                width: 100px;
+                height: 180px;
+            }
+
+            .prod h2 {
+                font-size: 12px;
+            }
+
+            .prod p {
+                font-size: 11px;
+            }
+
+            .plus {
+                width: 17px;
+                left: 80%;
+            }
+
+            .met {
+                gap: 4px;
+                display: none;
+            }
+
+            .met a {
+                font-size: 9px;
+            }
+
+            footer {
+                height: 70px;
+            }
+
+            footer h3 {
+                font-size: 8px;
+            }
+
+            footer img {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 321px) {
+            header {
+                padding: 5px 0;
+                height: 50px;
+            }
+
+            .l img {
+                width: 0;
+                display: none;
+            }
+
+            .adr a button {
+                font-size: 7px;
+                padding: 2px 2px 2px 0;
+            }
+
+            .b1 a {
+                width: 100px;
+            }
+
+            .b2 {
+                display: none;
+            }
+
+            .appl {
+                display: block;
+            }
+
+            .bim {
+                margin: 50px 0;
+                border-radius: 20px;
+            }
+
+            .prof {
+                padding: 4px 6px;
+                display: none;
+            }
+
+            section h1 {
+                font-size: 20px;
+            }
+
+            .grid {
+                gap: 10px;
+                grid-template-columns: repeat(2, 8fr);
+            }
+
+            .prod {
+                width: 80px;
+                height: 150px;
+                box-shadow: 1px 1px 5px gray;
+            }
+
+            .prod h2 {
+                font-size: 9px;
+            }
+
+            .prod p {
+                font-size: 8px;
+            }
+
+            .plus {
+                width: 14px;
+                left: 80%;
+            }
+
+            .met {
+                gap: 4px;
+                display: none;
+            }
+
+            .met a {
+                font-size: 9px;
+            }
+
+            footer {
+                height: 50px;
+                display: block;
+            }
+
+            footer h3 {
+                font-size: 5px;
+                margin-top: 30px;
+            }
+
+            footer img {
+                width: 60px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="l">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvJnxndioqBbJjDdNebCynnhd3aTpSCAp2wHcdPVJgXHJpFYGy4RcmTgkHb-wgaFvZ3w&usqp=CAU"
+                alt="">
+        </div>
+        <div class="adr b1">
+            <a href=""><img
+                    src="https://png.pngtree.com/recommend-works/png-clipart/20240509/ourmid/pngtree-black-location-icon-in-the-map-vector-transparent-image-png-image_12382613.png"
+                    alt=""><button>Укажите свой адрес</button></a>
+        </div>
+        <div class="met">
+            <a href="">О нас</a>
+            <a href="">Меню</a>
+            <a href="">Акции</a>
+            <a href="">Филиалы</a>
+            <a href="">Контакты</a>
+        </div>
+        <div class="adr b2">
+            <a href=""><button>Корзина</button><img src="https://cdn-icons-png.flaticon.com/512/126/126142.png"
+                    alt=""></a>
+        </div>
+        <div class="prof">
+            <a href=""><img src="https://static.thenounproject.com/png/638636-200.png" alt=""></a>
+        </div>
+        <div class="appl"><img src="https://cdn-icons-png.flaticon.com/512/20/20563.png" alt=""></div>
+    </header>
+    <div class="bi">
+        <img src="https://startup.network/upload/iblock/f3d/mr02pwqxqwkku3hlceqghq1exrgxfk2h/1628A821_E234_4CC1_917D_5D28A4C49579.jpeg"
+            alt="" class="bim">
+    </div>
+    <section>
+        <h1>Сеты</h1>
+        <div class="grid">
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2023/08/29/HZUU2lH1ZbPF8RUMbkI00HctLUq3UCBwisuMKesd.webp"
+                    alt="">
+                <h2>Qiyqiriq сет</h2>
+                <p>45 000 сум</p>
+                <img onclick="ord(0)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2023/10/12/cbidR6KU18nziNPphlU3jpa8OZi1nhaRKJkc93Cn.webp"
+                    alt="">
+                <h2>Снек сет</h2>
+                <p>79 000 сум</p>
+                <img onclick="ord(1)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2025/01/23/H8va6kYo41aw0wfu4BrccMyhNilKnETkVH771MBf.webp"
+                    alt="">
+                <h2>Классик сет</h2>
+                <p>34 000 сум</p>
+                <img onclick="ord(2)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2022/10/04/xJNb3iZ1NJ8Yx11eVSQ3X2CMSn5nruiAH8p9A35U.webp"
+                    alt="">
+                <h2>Лонгер рингс сет</h2>
+                <p>45 000 сум</p>
+                <img onclick="ord(3)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2024/07/17/O9t1bS2AbG4D1TQ0jYU8o3VvCUmBWcOeDuVjWi6e.webp"
+                    alt="">
+                <h2>Биг сет</h2>
+                <p>62 000 сум</p>
+                <img onclick="ord(4)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2025/01/23/QOeUW2EOilR8TCZM81sOF6VNCKRCLkcoOiDOL5kh.webp"
+                    alt="">
+                <h2>Лестер сет</h2>
+                <p>53 000 сум</p>
+                <img onclick="ord(5)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2025/01/23/cU3R5Ws2O90FTFZJQKq8XNwmv8s9FYWlweLY52q5.webp"
+                    alt="">
+                <h2>Скул сет</h2>
+                <p>36 000 сум</p>
+                <img onclick="ord(6)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2025/01/23/ecumnZHnAaKW43epYvPpFRvWQXm4ehT5CKOruaJY.webp"
+                    alt="">
+                <h2>Комбо сет Большой</h2>
+                <p>20 000 сум</p>
+                <img onclick="ord(7)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2022/06/15/d4xA2cZWeidDPxv0mlQ2hsYEMQacOIqsWbWy92XR.png"
+                    alt="">
+                <h2>Do’stlar 1х</h2>
+                <p>43 000 сум</p>
+                <img onclick="ord(8)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2022/06/15/U8v7GsJt5Nahm0L4Vna0u7HEeRc8U9PnU6R6j6TV.png"
+                    alt="">
+                <h2>Do’stlar 2х</h2>
+                <p>79 000 сум</p>
+                <img onclick="ord(9)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2022/06/15/eGsfAo0P5E7gh8aRB0vHPXX2JTKjAFasnhiBO777.png"
+                    alt="">
+                <h2>Do’stlar 4х</h2>
+                <p>149 000 сум</p>
+                <img onclick="ord(10)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+            <div class="prod">
+                <img class="prs"
+                    src="https://api.lesailes.uz/storage/products/2022/06/15/iHB3KWEddHpod7sUIc82M8pI627orxHpTz18qknX.png"
+                    alt="">
+                <h2>Острый Do’stlar 1х</h2>
+                <p>43 000 сум</p>
+                <img onclick="ord(11)" class="plus" src="https://img.icons8.com/m_outlined/512/FFFFFF/plus--v2.png" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h3>2024 Все права защищены</h3>
+        <div class="lo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvJnxndioqBbJjDdNebCynnhd3aTpSCAp2wHcdPVJgXHJpFYGy4RcmTgkHb-wgaFvZ3w&usqp=CAU"
+                alt="">
+        </div>
+    </footer>
+</body>
+<script>
+    const ordnames = ["Qiyriq set", "Snek set", "Classic set", "Long rings set", "Big set", "Lester set", "Skul set", "Kombo set Big", "Dostlar 1x", "Dostlar 2x", "Dostlar 4x", "Spicy Dostlar 1x"];
+    const ordprices = [45000, 79000, 34000, 45000, 62000, 53000, 36000, 20000, 43000, 79000, 149000, 43000];
+
+    function ord(id) {
+        ordnum = prompt(ordnames[id] + " nechta zakaz qilmoqchisiz");
+        if (confirm(ordnum + " ta " + ordnames[id] + " narxi " + ordprices[id] * ordnum + "\n\n        Maxsulot zakaz qilasizmi?")) {
+            alert("Maxsulot qabul qilindi!");
+        } else {
+            alert("Maxsulot otmen qilindi");
+        }
+    }
+</script>
+</html>
