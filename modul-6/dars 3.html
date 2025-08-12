@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таймер</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to right ,rgb(255, 123, 0) 10%, rgb(255, 64, 0) 50%, rgb(255, 115, 0)) 20%;
+            margin: 0;
+            padding: 0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .con {
+            background-color: orange;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px; 
+            margin-top: 14%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(89, 89, 89);
+        }
+        .box {
+            background-color: black;
+            color: white;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 0 0 16px rgb(89, 89, 89)
+        }
+        .time {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box">
+            <p class="time" id="hours"></p>
+            <p>Hours</p>
+        </div>
+        <div class="box">
+            <p class="time" id="minutes"></p>
+            <p>Minutes</p>
+        </div>
+        <div class="box">
+            <p class="time" id="seconds"></p>
+            <p>Seconds</p>
+        </div>
+    </div>
+</body>
+<script>
+    function timer () {
+        let hours = parseInt(prompt("Введите любой час: ", 0)) || 0;
+        let minutes = parseInt(prompt("Введите любую минуту: ", 0)) || 0;
+        let seconds = parseInt(prompt("Введите любую секуду: ", 0)) || 0;
+
+        let total = hours * 3600 + minutes * 60 + seconds;
+
+        let ht = document.getElementById("hours");
+        let mt = document.getElementById("minutes");
+        let st = document.getElementById("seconds");
+
+        const interval = setInterval(() => {
+            if (total <= 0) {
+                clearInterval(interval);
+                ht.textContent = "00";
+                mt.textContent = "00";
+                st.textContent = "00";
+                return
+            }
+
+            let h = ht.textContent = Math.floor(total / 3600);
+            let m = mt.textContent = Math.floor((total % 3600) / 60);
+            let s = st.textContent = total % 60;
+
+            ht.textContent = String(h).padStart(2, "0");
+            mt.textContent = String(m).padStart(2, "0");
+            st.textContent = String(s).padStart(2, "0");
+            
+            total--
+        }, 1000);
+    }
+    timer();
+</script>
+</html>
