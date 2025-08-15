@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TODO LIST</title>
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/7692/7692809.png"
+    />
+    <style>
+      :root {
+        --bg: #f4f5f8;
+        --panel: #ffffff;
+        --text: #121212;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --accent: #6d68ff;
+        --accent-2: #7b74ff;
+        --danger: #ef4444;
+        --ring: 0 0 0 3px rgba(109, 104, 255, 0.25);
+        --radius: 14px;
+      }
+      .dark {
+        --bg: #1f2127;
+        --panel: #252831;
+        --text: #f7f7fb;
+        --muted: #a5adc1;
+        --border: #383c45;
+        --accent: #7c7aff;
+        --accent-2: #9b97ff;
+        --danger: #ff6666;
+        --ring: 0 0 0 3px rgba(124, 122, 255, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter,
+          sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .wrap {
+        min-height: 100%;
+        padding: 32px;
+      }
+      .board {
+        max-width: 980px;
+        margin: 0 auto;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        padding: 24px 24px 8px;
+      }
+      .title {
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .bar {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 12px;
+        margin: 18px auto 8px;
+        max-width: 860px;
+      }
+      .field {
+        position: relative;
+      }
+      .input {
+        width: 100%;
+        height: 42px;
+        padding: 0 44px 0 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        outline: none;
+      }
+      .input:focus {
+        box-shadow: var(--ring);
+        border-color: transparent;
+      }
+      .icon-left {
+        position: absolute;
+        inset: 0 auto 0 10px;
+        display: grid;
+        place-items: center;
+        width: 24px;
+      }
+      .icon-right {
+        position: absolute;
+        inset: 0 8px 0 auto;
+        display: grid;
+        place-items: center;
+        width: 24px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        height: 42px;
+        padding: 0 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--accent);
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        user-select: none;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--text);
+      }
+
+      .list {
+        max-width: 860px;
+        margin: 8px auto 24px;
+      }
+      .item {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 10px;
+        align-items: center;
+        padding: 10px 6px;
+        border-bottom: 1px solid var(--border);
+      }
+      .check {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--accent);
+        border-radius: 4px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        background: transparent;
+      }
+      .check:checked {
+        background: var(--accent);
+      }
+      .check:checked::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: white;
+        clip-path: polygon(14% 44%, 0 63%, 44% 100%, 100% 18%, 80% 0, 41% 66%);
+      }
+
+      .label {
+        font-weight: 700;
+      }
+      .label.done {
+        color: var(--muted);
+        text-decoration: line-through;
+        font-weight: 600;
+      }
+
+      .smallbtn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 6px;
+        border-radius: 10px;
+        line-height: 0;
+        color: var(--muted);
+      }
+      .smallbtn:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      .dark .smallbtn:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .smallbtn.delete {
+        color: var(--danger);
+      }
+
+      dialog {
+        border: none;
+        border-radius: 16px;
+        padding: 18px;
+        background: var(--panel);
+        color: var(--text);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+      .dlg-row {
+        display: flex;
+        gap: 10px;
+      }
+      .dlg-input {
+        flex: 1;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        padding: 0 12px;
+        background: transparent;
+        color: var(--text);
+      }
+      .dlg-input:focus {
+        box-shadow: var(--ring);
+        border-color: transparent;
+      }
+
+      .hide {
+        display: none !important;
+      }
+      .hint {
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+        margin: 8px 0 16px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="board">
+        <h2 class="title">TODO LIST</h2>
+
+        <div class="bar">
+          <div class="field">
+            <input
+              id="search"
+              class="input"
+              placeholder="Search note or type to add..."
+            />
+            <span class="icon-left" aria-hidden="true">🔎</span>
+            <button
+              id="clearSearch"
+              class="icon-right smallbtn"
+              title="Clear"
+              type="button"
+            >
+              ✖️
+            </button>
+          </div>
+          <button id="addBtn" class="btn" type="button">SEND</button>
+          <button
+            id="modeBtn"
+            class="btn btn-ghost"
+            type="button"
+            title="Toggle Dark Mode"
+          >
+            🌙
+          </button>
+        </div>
+
+        <p class="hint">
+          Tip: Matn yozib <strong>SEND</strong> bosing — element qo‘shiladi.
+          Qidirish uchun shunchaki yozing.
+        </p>
+
+        <div id="list" class="list"></div>
+      </div>
+    </div>
+
+    <dialog id="editDlg">
+      <form method="dialog">
+        <div style="margin-bottom: 10px; font-weight: 700">Edit item</div>
+        <div class="dlg-row">
+          <input id="editInput" class="dlg-input" />
+          <button class="btn" value="ok">Save</button>
+          <button class="btn btn-ghost" value="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script>
+      (function () {
+        const $ = (s) => document.querySelector(s);
+        const listEl = $("#list");
+        const searchEl = $("#search");
+        const addBtn = $("#addBtn");
+        const modeBtn = $("#modeBtn");
+        const clearBtn = $("#clearSearch");
+        const editDlg = $("#editDlg");
+        const editInput = $("#editInput");
+
+        const LS_KEY = "todo-items:v1";
+        const MODE_KEY = "todo-mode:v1";
+
+        let items = [];
+
+        const uid = () => Math.random().toString(36).slice(2, 9);
+        const save = () => localStorage.setItem(LS_KEY, JSON.stringify(items));
+        const load = () => {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) {
+            try {
+              items = JSON.parse(raw) || [];
+            } catch {
+              items = [];
+            }
+          }
+          if (!raw) {
+            items = [
+              { id: uid(), text: "NOTE #1", done: false },
+              { id: uid(), text: "NOTE #2", done: true },
+              { id: uid(), text: "NOTE #3", done: false },
+            ];
+            save();
+          }
+        };
+
+        function applyMode() {
+          const mode = localStorage.getItem(MODE_KEY) || "light";
+          document.body.classList.toggle("dark", mode === "dark");
+          modeBtn.textContent = mode === "dark" ? "☀️" : "🌙";
+        }
+        function toggleMode() {
+          const mode =
+            (localStorage.getItem(MODE_KEY) || "light") === "light"
+              ? "dark"
+              : "light";
+          localStorage.setItem(MODE_KEY, mode);
+          applyMode();
+        }
+
+        function iconEdit() {
+          return "✏️";
+        }
+        function iconTrash() {
+          return "🗑️";
+        }
+
+        function render() {
+          const q = searchEl.value.trim().toLowerCase();
+          const frag = document.createDocumentFragment();
+
+          items
+            .filter((x) => x.text.toLowerCase().includes(q))
+            .forEach((x) => frag.appendChild(renderItem(x)));
+
+          listEl.innerHTML = "";
+          listEl.appendChild(frag);
+        }
+
+        function renderItem(item) {
+          const row = document.createElement("div");
+          row.className = "item";
+          row.dataset.id = item.id;
+
+          const cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.className = "check";
+          cb.checked = item.done;
+
+          const label = document.createElement("div");
+          label.textContent = item.text;
+          label.className = "label" + (item.done ? " done" : "");
+
+          const bEdit = document.createElement("button");
+          bEdit.className = "smallbtn";
+          bEdit.title = "Edit";
+          bEdit.textContent = iconEdit();
+
+          const bDel = document.createElement("button");
+          bDel.className = "smallbtn delete";
+          bDel.title = "Delete";
+          bDel.textContent = iconTrash();
+
+          cb.addEventListener("change", () => {
+            item.done = cb.checked;
+            save();
+            render();
+          });
+
+          bDel.addEventListener("click", () => {
+            items = items.filter((t) => t.id !== item.id);
+            save();
+            render();
+          });
+
+          bEdit.addEventListener("click", async () => {
+            editInput.value = item.text;
+            editDlg.showModal();
+            const { returnValue } = await new Promise((res) => {
+              const onClose = () => {
+                editDlg.removeEventListener("close", onClose);
+                res({ returnValue: editDlg.returnValue });
+              };
+              editDlg.addEventListener("close", onClose, { once: true });
+            });
+            if (returnValue === "ok") {
+              const v = editInput.value.trim();
+              if (v) {
+                item.text = v;
+                save();
+                render();
+              }
+            }
+          });
+
+          row.appendChild(cb);
+          row.appendChild(label);
+          row.appendChild(bEdit);
+          row.appendChild(bDel);
+          return row;
+        }
+
+        function addFromSearch() {
+          const v = searchEl.value.trim();
+          if (!v) return;
+          items.unshift({ id: uid(), text: v, done: false });
+          save();
+          searchEl.value = "";
+          render();
+        }
+
+        load();
+        applyMode();
+        render();
+
+        addBtn.addEventListener("click", addFromSearch);
+        searchEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") addFromSearch();
+        });
+        searchEl.addEventListener("input", render);
+        clearBtn.addEventListener("click", () => {
+          searchEl.value = "";
+          render();
+        });
+        modeBtn.addEventListener("click", toggleMode);
+      })();
+    </script>
+  </body>
+</html>
