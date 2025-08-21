@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemons</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <button id="favButton">
+        <span id="favCount"></span>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3031/3031121.png"
+          alt="Favorites"
+        />
+      </button>
+    </header>
+    <div class="logo">
+      <img
+        src="https://infograficos-estaticos.s3.amazonaws.com/pokemon-de-onde-veio/assets/imagens/pokemon-logo.gif"
+        alt=""
+      />
+    </div>
+    <div class="pokecards">
+      <div class="search">
+        <input
+          type="text"
+          name=""
+          id="searchname"
+          placeholder="search your pokemon"
+        />
+        <select name="" id="select-type">
+          <option value="">All</option>
+          <option value="Bug">Bug</option>
+          <option value="Dark">Dark</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Electric">Electric</option>
+          <option value="Fairy">Fairy</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Fire">Fire</option>
+          <option value="Flying">Flying</option>
+          <option value="Ghost">Ghost</option>
+          <option value="Grass">Grass</option>
+          <option value="Ground">Ground</option>
+          <option value="Ice">Ice</option>
+          <option value="Poison">Poison</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Rock">Rock</option>
+          <option value="Steel">Steel</option>
+          <option value="Water">Water</option>
+        </select>
+        <input type="number" name="" id="from" placeholder="from" />
+        <input type="number" name="" id="to" placeholder="to" />
+        <select name="" id="selectwl">
+          <option value="name-asc">A-Z (Name)</option>
+          <option value="name-desc">Z-A (Name)</option>
+          <option value="weight-asc">From Weight</option>
+          <option value="weight-desc">To Weight</option>
+        </select>
+      </div>
+      <div class="pokemons" id="pokebox"></div>
+    </div>
+    <div class="mtab" id="favTab">
+      <button id="closeFavTab" class="close-btn">Закрыть</button>
+      <h1>Избранные</h1>
+      <div class="mboxes" id="favContainer"></div>
+    </div>
+  </body>
+  <script src="./pokemons.js"></script>
+  <script src="./main.js"></script>
+</html>
