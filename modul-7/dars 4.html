@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          :root {
+               --bg: whitesmoke;
+               --text-col: black;
+               --pan: white;
+               --border-def: 1px solid rgb(207, 207, 207);
+               --mode-b: rgb(30, 30, 30);
+               --text-mb: white;
+               --box-shadow-everys: 0 0 5px rgb(181, 181, 181);
+               --bg: whitesmoke;
+               --bg: whitesmoke;
+          }
+
+          .dark {
+               --bg: black;
+               --text-col: white;
+               --pan: rgb(22, 22, 22);
+               --border-def: rgb(76, 76, 76);
+               --mode-b: rgb(235, 235, 235);
+               --text-mb: black;
+               --box-shadow-everys: 0 0 5px rgb(49, 49, 49);
+               --bg: black;
+               --bg: black;
+          }
+
+          body {
+               background-color: var(--bg);
+               color: var(--text-col);
+               margin: 0;
+               padding: 0;
+               font-family: Arial, Helvetica, sans-serif;
+               transition: 0.3 ease;
+          }
+
+          header {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               padding: 20px 50px;
+               border-bottom: 1px solid gainsboro;
+               margin-bottom: 40px;
+          }
+
+          .title {
+               color: var(--text-col);
+          }
+
+          .mode {
+               background-color: var(--mode-b);
+               color: var(--text-mb);
+               border: var(--border-def);
+               border-radius: 5px;
+               padding: 10px;
+               font-size: 20px;
+          }
+
+          .sesite {
+               width: 100%;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               margin-bottom: 40px;
+          }
+
+          .serinp {
+               width: 90%;
+               padding: 15px;
+               border: var(--border-def);
+               background-color: var(--pan);
+               color: var(--text-col);
+               border-radius: 10px;
+               outline: none;
+               font-size: 20px;
+          }
+
+          .countries {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 40px;
+               flex-wrap: wrap;
+          }
+
+          .country {
+               width: 300px;
+               height: 350px;
+               background-color: var(--pan);
+               border: var(--border-def);
+               border-radius: 10px;
+               overflow: hidden;
+          }
+
+          .country img {
+               width: 100%;
+               height: 70%;
+          }
+
+          @media (max-width: 768px) {
+               .mode {
+                    font-size: 15px;
+               }
+          }
+
+          @media (max-width: 625px) {
+               .mode {
+                    font-size: 15px;
+               }
+
+               .serinp {
+                    width: 100%;
+                    padding: 10px;
+                    border: var(--border-def);
+                    border-radius: 0;
+                    outline: none;
+                    font-size: 16px;
+               }
+          }
+
+          @media (max-width: 425px) {
+               .mode {
+                    font-size: 15px;
+               }
+
+               .serinp {
+                    width: 100%;
+                    padding: 10px;
+                    border: var(--border-def);
+                    border-radius: 0;
+                    outline: none;
+                    font-size: 16px;
+               }
+
+               .title {
+                    color: var(--text-col);
+                    font-size: 20px;
+               }
+
+               .country {
+                    width: 200px;
+                    height: 250px;
+                    background-color: var(--pan);
+                    border: var(--border-def);
+                    border-radius: 10px;
+                    overflow: hidden;
+               }
+               .country h3 {
+                    font-size: 12px;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <header>
+          <h1 class="title">Countries</h1>
+          <button class="mode" id="modeb">Dark Mode</button>
+     </header>
+     <div class="sesite">
+          <input type="text" id="search-countries" class="serinp" oninput="search()">
+     </div>
+     <div class="countries" id="councon"></div>
+</body>
+<script>
+     async function mflags() {
+          const con = document.getElementById("councon");
+
+          try {
+               const fdata = await fetch("https://restcountries.com/v3.1/all?fields=name,flags");
+
+               if (!fdata.ok) {
+                    throw new Error("Ошибка при получении данных.");
+               }
+
+               const json = await fdata.json();
+
+               con.innerHTML = "";
+
+               json.forEach((dat, index) => {
+                    const div = document.createElement("div");
+                    div.className = "country";
+                    div.innerHTML = `
+                <img src="${dat.flags.svg}" alt="Flag of ${dat.name.official}" />
+                <h3>${index + 1}. ${dat.name.official}</h3>
+            `;
+                    con.appendChild(div);
+               });
+          } catch (error) {
+               alert("Ошибка: " + error.message);
+          }
+     }
+
+     mflags();
+
+     function search() {
+          const searchValue = document.getElementById("search-countries").value.toLowerCase();
+          const countries = document.querySelectorAll(".country");
+
+          countries.forEach(country => {
+               if (searchValue === "") {
+                    country.style.display = "block"; // Set display for individual country
+               } else {
+                    const countryName = country.querySelector("h3").textContent.toLowerCase();
+                    country.style.display = countryName.includes(searchValue) ? "block" : "none";
+               }
+          });
+     }
+
+     const body = document.body;
+     const tmode = document.getElementById("modeb");
+
+     function mode() {
+          const isDark = body.classList.toggle("dark");
+          tmode.textContent = isDark ? "Light Mode" : "Dark Mode";
+     }
+
+     tmode.addEventListener("click", mode);
+
+</script>
+
+</html>
