@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --bg: whitesmoke;
+            --text-col: black;
+            --pan: rgb(241, 241, 241);
+            --border-def: 1px solid rgb(207, 207, 207);
+            --mode-b: rgb(0, 0, 0);
+            --mode-shadow: 0 0 5px gray;
+            --mode-b-active: rgb(26, 26, 26);
+            --mode-bor: 1px solid rgb(41, 41, 41);
+            --text-mb: white;
+            --box-shadow-everys: 0 0 5px rgb(181, 181, 181);
+            --bg: whitesmoke;
+            --bg: whitesmoke;
+        }
+
+        .dark {
+            --bg: black;
+            --text-col: white;
+            --pan: rgb(22, 22, 22);
+            --border-def: rgb(76, 76, 76);
+            --mode-b: rgb(255, 255, 255);
+            --mode-shadow: 0 0 5px rgb(202, 202, 202);
+            --mode-b-active: rgb(231, 231, 231);
+            --mode-bor: 1px solid rgb(156, 156, 156);
+            --text-mb: black;
+            --box-shadow-everys: 0 0 5px rgb(49, 49, 49);
+            --bg: black;
+            --bg: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-col);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: 0.3 ease;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .modeb {
+            background-color: var(--mode-b);
+            color: var(--text-mb);
+            padding: 10px;
+            border: var(--mode-bor);
+            box-shadow: var(--mode-shadow);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modeb:active {
+            background-color: var(--mode-b-active);
+        }
+
+        .sersite {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            padding: 20px 45px;
+        }
+
+        .search {
+            width: 90%;
+            background-color: var(--pan);
+            color: var(--text-col);
+            padding: 15px;
+            border: var(--border-def);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .reg {
+            background-color: var(--pan);
+            color: var(--text-col);
+            padding: 15px;
+            border: var(--border-def);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .countries {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: var(--pan);
+            color: var(--text-col);
+            border: var(--border-def);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .name {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Where in the world?</h2>
+        <button class="modeb" id="mode">Dark Mode</button>
+    </header>
+    <div class="sersite">
+        <input oninput="search()" type="text" placeholder="Search for countries..." class="search" id="inp">
+        <select class="reg" id="regions" onchange="regsearch()">
+            <option class="regs" value="">All</option>
+            <option class="regs" value="Africa">Africa</option>
+            <option class="regs" value="Americas">Americas</option>
+            <option class="regs" value="Asia">Asia</option>
+            <option class="regs" value="Europe">Europe</option>
+            <option class="regs" value="Oceania">Oceania</option>
+        </select>
+    </div>
+    <div class="countries" id="con"></div>
+</body>
+<script>
+    async function createCountries() {
+        const con = document.getElementById("con");
+        const regins = document.getElementById("regions")
+        try {
+            const fdata = await fetch("https://restcountries.com/v3.1/all?fields=name,flags,region,capital");
+            const data = await fdata.json();
+
+            console.log(data);
+
+
+            data.forEach(coun => {
+                const div = document.createElement("div");
+                div.className = "box";
+                div.setAttribute("data-region", coun.region.toLowerCase());
+                div.innerHTML = `
+                    <img src="${coun.flags.svg}" alt="Flag of ${coun.name.common}" />
+                    <h4 class="name">Country: ${coun.name.common}</h4>
+                    <h4 class="name">Capital: ${coun.capital ? coun.capital[0] : "N/A"}</h4>
+                    <h4>Region: ${coun.region}</h4>
+                `;
+                con.appendChild(div);
+            });
+        } catch (error) {
+            alert("Failed to load countries: " + error);
+        }
+    }
+
+    createCountries();
+
+    function search() {
+        const value = document.getElementById("inp").value.toLowerCase();
+        const coun = document.querySelectorAll(".box");
+
+        coun.forEach(con => {
+            const countryName = con.querySelector(".name").textContent.toLowerCase();
+            con.style.display = countryName.includes(value) ? "flex" : "none";
+        });
+    }
+
+    function regsearch() {
+        const selectedRegion = document.getElementById("regions").value.toLowerCase();
+        const countries = document.querySelectorAll(".box");
+
+        countries.forEach(box => {
+            const boxRegion = box.getAttribute("data-region");
+
+            if (selectedRegion === "" || boxRegion === selectedRegion) {
+                box.style.display = "flex";
+            } else {
+                box.style.display = "none";
+            }
+        });
+    }
+
+    const modeb = document.getElementById("mode");
+    const body = document.body;
+
+    modeb.addEventListener("click", () => {
+        const cont = body.classList.toggle("dark");
+        modeb.textContent = cont ? "Light Mode" : "Dark Mode";
+    })
+</script>
+
+</html>
