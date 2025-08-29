@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Конвертер валют</title>
+     <style>
+          body {
+               font-family: Arial, sans-serif;
+               background: #f4f6f9;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               height: 100vh;
+               margin: 0;
+          }
+
+          .converter {
+               background: white;
+               padding: 20px;
+               border-radius: 12px;
+               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+               width: 320px;
+          }
+
+          .converter h2 {
+               text-align: center;
+               margin-bottom: 15px;
+          }
+
+          select,
+          input,
+          button {
+               width: 100%;
+               padding: 8px;
+               margin: 6px 0;
+               border: 1px solid #ddd;
+               border-radius: 6px;
+               font-size: 16px;
+          }
+
+          button {
+               background: #0078ff;
+               color: white;
+               border: none;
+               cursor: pointer;
+          }
+
+          button:hover {
+               background: #005fcc;
+          }
+
+          .result {
+               margin-top: 10px;
+               font-size: 18px;
+               text-align: center;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="converter">
+          <h2>Конвертер валют</h2>
+          <input type="text" id="amount" placeholder="Сумма" />
+          <select id="from"></select>
+          <select id="to"></select>
+          <button onclick="convert()">Конвертировать</button>
+          <div class="result" id="result">Результат: 0</div>
+     </div>
+
+     <script>
+          let rates = {};
+
+          async function loadRates() {
+               try {
+                    const res = await fetch("https://v6.exchangerate-api.com/v6/73fdbababc164adc9d277424/latest/USD");
+                    const data = await res.json();
+                    rates = data.conversion_rates;
+
+                    const from = document.getElementById("from");
+                    const to = document.getElementById("to");
+
+                    Object.keys(rates).forEach(code => {
+                         from.innerHTML += `<option value="${code}">${code}</option>`;
+                         to.innerHTML += `<option value="${code}">${code}</option>`;
+                    });
+
+                    from.value = "USD";
+                    to.value = "UZS";
+               } catch (e) {
+                    alert("Ошибка загрузки курсов: " + e);
+               }
+          }
+
+          function formatNumber(num) {
+               return num.toLocaleString("ru-RU");
+          }
+
+          function parseNumber(str) {
+               return parseFloat(str.replace(/\s/g, "").replace(",", "."));
+          }
+
+          function convert() {
+               const rawAmount = document.getElementById("amount").value;
+               const amount = parseNumber(rawAmount);
+               const from = document.getElementById("from").value;
+               const to = document.getElementById("to").value;
+
+               if (isNaN(amount)) {
+                    alert("Введите число!");
+                    return;
+               }
+
+               const usdAmount = amount / rates[from];
+               const converted = usdAmount * rates[to];
+
+               document.getElementById("result").innerText =
+                    `Результат: ${formatNumber(Number(converted.toFixed(2)))} ${to}`;
+          }
+
+          document.getElementById("amount").addEventListener("input", function (e) {
+               const cursorPos = e.target.selectionStart;
+               const raw = parseNumber(e.target.value) || 0;
+               e.target.value = formatNumber(raw);
+               e.target.setSelectionRange(cursorPos, cursorPos);
+          });
+
+          loadRates();
+     </script>
+</body>
+
+</html>
