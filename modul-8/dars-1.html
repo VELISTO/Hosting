@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="text/javascript">
+        // const root = ReactDOM.createRoot(document.getElementById("app"));
+
+        // root.render(
+        //     React.createElement(React.Fragment, null,
+        //         React.createElement("h1", null, "Welcome to React JS"),
+        //         React.createElement("h2", null, "This is my first React app"),
+        //         React.createElement("ul", null,
+        //             React.createElement("li", null, "HTML"),
+        //             React.createElement("li", null, "CSS"),
+        //             React.createElement("li", null, "JavaScript"),
+        //             React.createElement("li", null, "React")),
+        //         React.createElement("h3", null, "What is React"),
+        //         React.createElement("p", null, "React nima? React - bu Facebook tomonidan yaratilgan ochiq kodli JavaScript kutubxonasi boʻlib, asosan foydalanuvchi interfeyslarini (UI) yaratish uchun mo'ljallangan. U yagona sahifali ilovalar (single-page applications) va dinamik, sezgir veb-ilovalarni ishlab chiqishda keng qo'llaniladi."),
+        //         React.createElement("h3", null, "What is Single-page application(SPA)"),
+        //         React.createElement("p", null, "SPA (Single Page Application) - bu bitta sahifali veb-ilova boʻlib, unda sahifa kontenti dinamik ravishda yangilanadi va foydalanuvchining har bir amalida butun sahifani qaytadan yuklash talab qilinmaydi. JavaScript yordamida faqat kerakli kontent o'zgartiriladi, bu esa ilovani tezkor va foydalanuvchi uchun qulay qiladi.")
+        //     )
+        // );
+
+        function header() {
+            return React.createElement(
+                React.Fragment,
+                null,
+                React.createElement("h1", null, "Welcome to React JS"),
+                React.createElement("h2", null, "This is my first React app")
+            );
+        }
+
+        function list() {
+            return React.createElement(
+                "ul",
+                null,
+                ["HTML", "CSS", "JavaScript", "React"].map(skill =>
+                    React.createElement("li", { key: skill }, skill)
+                )
+            );
+        }
+
+        function info(title, content) {
+            return React.createElement(
+                React.Fragment,
+                null,
+                React.createElement("h3", null, title),
+                React.createElement("p", null, content)
+            );
+        }
+
+        function App() {
+            return React.createElement(
+                React.Fragment,
+                null,
+                header(),
+                list(),
+                info(
+                    "What is React",
+                    "React nima? React - bu Facebook tomonidan yaratilgan ochiq kodli JavaScript kutubxonasi boʻlib, asosan foydalanuvchi interfeyslarini (UI) yaratish uchun mo'ljallangan. U yagona sahifali ilovalar (single-page applications) va dinamik, sezgir veb-ilovalarni ishlab chiqishda keng qo'llaniladi."
+                ),
+                info(
+                    "What is Single-page application(SPA)",
+                    "SPA (Single Page Application) - bu bitta sahifali veb-ilova boʻlib, unda sahifa kontenti dinamik ravishda yangilanadi va foydalanuvchining har bir amalida butun sahifani qaytadan yuklash talab qilinmaydi. JavaScript yordamida faqat kerakli kontent o'zgartiriladi, bu esa ilovani tezkor va foydalanuvchi uchun qulay qiladi."
+                )
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("app"));
+        root.render(App());
+    </script>
+</body>
+
+</html>
