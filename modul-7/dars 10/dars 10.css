@@ -1,0 +1,159 @@
+:root {
+    --bg: whitesmoke;
+    --pan: white;
+    --col-opts-id: white;
+    --bg-opts: rgb(244, 244, 244);
+    --bg-opts-ind: orange;
+    --bg-opts-c: rgb(143, 143, 143);
+    --bg-hover-opts: rgb(231, 231, 231);
+    --bg-hover-opts-ind: rgb(240, 156, 0);
+    --bg-hover-opts-c: rgb(99, 99, 99);
+    --bg-active-opts: rgb(212, 212, 212);
+    --bg-active-opts-ind: rgb(209, 136, 0);
+    --bg-active-opts-c: rgb(102, 102, 102);
+    --text-opts: rgb(39, 39, 39);
+    --text-color: black;
+    --border: 1px solid rgb(218, 218, 218);
+    --box-shadow-con: 0 0 12px rgb(171, 171, 171);
+    --box-shadow-opts: 0 0 3px rgba(94, 94, 94, 0.5);
+    --box-shadow-opts-i: 0 0 3px rgba(255, 123, 0, 0.712);
+    --box-shadow-opts-c: 0 0 3px rgba(122, 122, 122, 0.712);
+    --hl-opt: rgb(13, 156, 204);
+    --hl-color: rgb(63, 63, 63);
+    --mode-bg: rgb(10, 10, 10);
+    --mode-bg-hover: rgb(35, 35, 35);
+    --mode-bg-active: rgb(51, 51, 51);
+    --mode-col: white;
+    --mode-border: 1px solid rgb(143, 143, 143);
+}
+.dark {
+    --bg: rgb(4, 3, 8);
+    --pan: rgb(17, 17, 17);
+    --col-opts-id: white;
+    --bg-opts: rgb(26, 26, 26);
+    --bg-opts-ind: orange;
+    --bg-opts-c: rgb(55, 55, 55);
+    --bg-hover-opts: rgb(34, 34, 34);
+    --bg-hover-opts-ind: rgb(227, 147, 0);
+    --bg-hover-opts-c: rgb(69, 69, 69);
+    --bg-active-opts: rgb(48, 48, 48);
+    --bg-active-opts-ind: rgb(195, 130, 10);
+    --bg-active-opts-c: rgb(77, 77, 77);
+    --text-opts: rgb(202, 202, 202);
+    --text-color: white;
+    --border: 1px solid rgb(41, 41, 41);
+    --box-shadow-con: 0 0 12px rgb(57, 57, 57);
+    --box-shadow-opts: 0 0 5px rgb(57, 57, 57);
+    --box-shadow-opts-i: 0 0 3px rgba(255, 123, 0, 0.712);
+    --box-shadow-opts-c: 0 0 3px rgba(54, 53, 53, 0.712);
+    --hl-opt: rgb(26, 103, 128);
+    --hl-color: rgb(189, 189, 189);
+    --mode-bg: whitesmoke;
+    --mode-bg-hover: rgb(222, 222, 222);
+    --mode-bg-active: rgb(211, 211, 211);
+    --mode-col: black;
+    --mode-border: 1px solid rgb(88, 88, 88);
+}
+* {
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+body {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+}
+.calc {
+    background-color: var(--pan);
+    padding: 10px;
+    border: var(--border);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: var(--box-shadow-con);
+}
+input {
+    width: 100%;
+    background-color: var(--bg-opts);
+    color: var(--text-opts);
+    padding: 15px 10px;
+    font-size: 20px;
+    border: var(--border);
+    border-radius: 10px;
+    outline: none;
+    box-shadow: var(--box-shadow-opts);
+}
+.options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.opt {
+    width: 100%;
+    background-color: var(--bg-opts);
+    color: var(--text-opts);
+    padding: 20px;
+    font-size: 18px;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-opts);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.opt:hover {
+    background-color: var(--bg-hover-opts);
+}
+.opt:active {
+    background-color: var(--bg-active-opts);
+}
+.i {
+    background-color: var(--bg-opts-ind);
+    color: var(--col-opts-id);
+    box-shadow: var(--box-shadow-opts-i);
+}
+.i:hover {
+    background-color: var(--bg-hover-opts-ind);
+
+}
+.i:active {
+    background-color: var(--bg-active-opts-ind);
+}
+.c {
+    background-color: var(--bg-opts-c);
+    color: var(--col-opts-id);
+    box-shadow: var(--box-shadow-opts-c);
+}
+.c:hover {
+    background-color: var(--bg-hover-opts-c);
+
+}
+.c:active {
+    background-color: var(--bg-active-opts-c);
+}
+.modeb {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background-color: var(--mode-bg);
+    color: var(--mode-col);
+    padding: 10px;
+    border: var(--mode-border);
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: var(--box-shadow-opts);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.modeb:hover {
+    background-color: var(--mode-bg-hover);
+}
+.modeb:active {
+    background-color: var(--mode-bg-active);
+}
