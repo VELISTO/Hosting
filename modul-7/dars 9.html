@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 95.2vh;
+            background: linear-gradient(to right, blue, rgb(125, 19, 255));
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .con {
+            background-color: rgb(11, 0, 128);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+            border-radius: 20px;
+            width: 45%;
+            gap: 15px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 200px;
+            resize: none;
+            outline: none;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+
+        select {
+            outline: none;
+            border: none;
+            width: 100px;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+
+        button {
+            padding: 15px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            background: purple;
+            color: white;
+            box-shadow: 0 0 5px rgb(112, 112, 112);
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.1s ease;
+            mask-image: linear-gradient(to right, transparent 0%, transparent 0%, black 0%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 0%, black 0%);
+            transition: mask-image 0.7s ease;
+        }
+
+        button:hover {
+            color: white;
+            background: purple;
+            mask-image: linear-gradient(to right, black 0%, black 50%, transparent 1000%);
+            -webkit-mask-image: linear-gradient(to right, black 0%, black 50%, transparent 1000%);
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, blue 70%, rgb(131, 0, 191), purple);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        button:hover::after {
+            width: 100%;
+        }
+
+        .www {
+            color: rgb(72, 72, 255);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <h1>Text-to-Voice</h1>
+        <textarea id="utext" placeholder="Введите текст..."></textarea>
+        <select id="slang">
+            <option value="ru-RU">Russian</option>
+            <option value="en-US">English</option>
+            <option value="uz-UZ">Uzbek</option>
+        </select>
+        <button onclick="speech()">Activate voice manager</button>
+    </div>
+</body>
+<script>
+    function speech() {
+        const text = document.getElementById("utext").value;
+        if (!text) {
+            alert("Введите текст, чтобы воспроизвести!!!");
+            return;
+        }
+
+        var lang = document.getElementById("slang").value;
+
+        const synth = window.speechSynthesis;
+        const utt = new SpeechSynthesisUtterance(text);
+
+        utt.lang = lang;
+
+        synth.speak(utt);
+    }
+</script>
+
+</html>
