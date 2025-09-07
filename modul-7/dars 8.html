@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          body {
+               font-family: Arial, Helvetica, sans-serif;
+               margin: 0;
+               padding: 0;
+               height: 100vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               background-color: whitesmoke;
+          }
+
+          * {
+               box-sizing: border-box;
+          }
+
+          .con {
+               width: 50%;
+               max-height: auto;
+               padding: 40px;
+               display: flex;
+               justify-content: start;
+               align-items: center;
+               flex-direction: column;
+               gap: 10px;
+               background-color: white;
+               border-radius: 25px;
+               border: 1px solid gray;
+          }
+
+          .contact {
+               width: 100%;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+          }
+
+          .addb {
+               background-color: slateblue;
+               color: white;
+               border: none;
+               border-radius: 8px;
+               padding: 10px;
+               font-size: 18px;
+               cursor: pointer;
+          }
+
+          .addb:active {
+               background-color: rgb(77, 63, 171);
+          }
+
+          .con-list {
+               width: 100%;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               gap: 20px;
+          }
+
+          .cont {
+               width: 90%;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               border-bottom: 1px solid rgb(248, 248, 248);
+               padding: 5px;
+          }
+
+          .accon {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 10px;
+          }
+
+          .setcon {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 10px;
+          }
+
+          .set {
+               padding: 10px;
+               background-color: rgb(250, 250, 250);
+               border: none;
+               border-radius: 10px;
+          }
+
+          .set img {
+               width: 20px;
+               cursor: pointer;
+          }
+
+          .d {
+               filter: invert(18%) sepia(100%) saturate(7500%) hue-rotate(-50deg) brightness(90%) contrast(120%);
+          }
+
+          .add-dialog {
+               position: absolute;
+               z-index: 2;
+               display: none;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               gap: 10px;
+               background-color: white;
+               border-radius: 25px;
+               border: 1px solid gray;
+               padding: 40px;
+               box-shadow: 0 0 100vh 100vh rgba(0, 0, 0, 0.2);
+          }
+
+          .add-dialog input {
+               min-width: 300px;
+               background-color: white;
+               border: 1px solid gray;
+               padding: 9px;
+               border-radius: 7px;
+          }
+
+          .add-dialog button {
+               background-color: green;
+               color: white;
+               padding: 9px;
+               border: 1px solid gray;
+               border-radius: 7px;
+               font-weight: 600;
+          }
+
+          .edit-dialog {
+               position: absolute;
+               z-index: 2;
+               display: none;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               gap: 10px;
+               background-color: white;
+               border-radius: 25px;
+               border: 1px solid gray;
+               padding: 40px;
+               box-shadow: 0 0 100vh 100vh rgba(0, 0, 0, 0.2);
+          }
+
+          .edit-dialog input {
+               min-width: 300px;
+               background-color: white;
+               border: 1px solid gray;
+               padding: 9px;
+               border-radius: 7px;
+          }
+
+          .edit-dialog button {
+               background-color: rgb(194, 181, 1);
+               color: white;
+               padding: 9px;
+               border: 1px solid gray;
+               border-radius: 7px;
+               font-weight: 600;
+          }
+
+          .show {
+               display: flex;
+          }
+          span {
+               font-weight: 500;
+               color: rgb(32, 32, 32);
+          }
+     </style>
+</head>
+
+<body>
+     <div class="con">
+          <div class="contact">
+               <h3>User</h3>
+               <button class="addb" id="addig">Add Contact</button>
+          </div>
+          <div class="con-list" id="users"></div>
+     </div>
+     <div class="add-dialog" id="addd">
+          <h2>Who's him</h2>
+          <input id="name" placeholder="Name" type="text">
+          <input id="secname" placeholder="Second Name" type="text">
+          <input id="num" placeholder="Number/Username" type="number">
+          <button id="adconf">Create Contact</button>
+     </div>
+     <div class="edit-dialog" id="edd">
+          <h2>Edit</h2>
+          <input placeholder="Name" type="text" id="newname">
+          <input placeholder="Second Name" type="text" id="newsec">
+          <input placeholder="Number/Username" type="number" id="newnum">
+          <button id="editconf">Confirm</button>
+     </div>
+</body>
+<script>
+     const api = "https://68bc2d110f2491613ede4529.mockapi.io/profdata/article";
+     // Контейнерские штуки
+     const list = document.getElementById("users");
+     const addb = document.getElementById("addig");
+     // Для нового контакта
+     const ninp = document.getElementById("name");
+     const secn = document.getElementById("secname");
+     const numb = document.getElementById("num");
+     // Для диалога изменения
+     const edname = document.getElementById("newname");
+     const edsec = document.getElementById("newsec");
+     const ednum = document.getElementById("newnum");
+     // Диалоги
+     const addiag = document.getElementById("addd");
+     const confa = document.getElementById("adconf");
+     // Кнопки изменения
+     const editd = document.getElementById("edd");
+     const confe = document.getElementById("editconf");
+
+     async function load() {
+          const fd = await fetch(api);
+          const data = await fd.json();
+          console.log(data);
+
+          list.innerHTML = "";
+
+          if (data.length > 0) {
+               data.forEach(users => {
+                    const cont = document.createElement("div");
+                    cont.className = "cont";
+                    cont.innerHTML = `
+                <div class="accon">
+                    <img width="40px" src="${users.avatar}" />
+                    <h4>${users.name}<br/><span>${users.secname}</span><br/><span>${users.username}</span></h3>
+                </div>
+                <div class="setcon">
+                    <button class="set e" data-id="${users.id}" onclick="edit(event)">
+                        <img src="${users.editb}" />
+                    </button>
+                    <button class="set dff" data-id="${users.id}" onclick="del(event)">
+                        <img src="${users.delb}" />
+                    </button>
+                </div>
+            `;
+                    list.appendChild(cont);
+               });
+          } else {
+               list.innerHTML = "<p>Пользователей нет</p>";
+          }
+     }
+
+     async function addcon() {
+          const text = ninp.value.trim();
+          const sec = secn.value.trim();
+          const anum = numb.value.trim();
+
+          if (!text) return alert("Введите имя");
+
+          const newUser = {
+               name: text,
+               secname: sec,
+               username: anum,
+               avatar: "https://cdn-icons-png.flaticon.com/512/266/266033.png",
+               editb: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vector-icons-4/edit-flwwwz417de3u3nzvstgpu.png/edit-qtep4ftgzlsz4sl22a43m9.png?_a=DATAg1AAZAA0",
+               delb: "https://cdn-icons-png.flaticon.com/512/6861/6861362.png"
+          };
+
+          await fetch(api, {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(newUser)
+          });
+
+          ninp.value = '';
+          secn.value = '';
+          numb.value = '';
+          addiag.classList.remove("show");
+          load();
+     }
+
+     async function del(event) {
+          const userId = event.target.closest('button').getAttribute('data-id');
+          if (confirm("Вы уверены, что хотите удалить этого пользователя?")) {
+               await fetch(`${api}/${userId}`, {
+                    method: 'DELETE',
+               });
+               load();
+          }
+     }
+
+     function edit(event) {
+          const userId = event.target.closest('button').getAttribute('data-id');
+          console.log("Редактирование пользователя с ID:", userId); // Проверка срабатывания
+
+          editd.classList.add("show"); // Появление диалогового окна
+          editd.setAttribute("data-id", userId);
+     }
+
+     async function editInf() {
+          const userId = editd.getAttribute("data-id"); // Получаем ID редактируемого пользователя
+          const nname = edname.value.trim();
+          const nsecn = edsec.value.trim();
+          const nnumn = ednum.value.trim();
+
+          console.log("ID пользователя для редактирования:", userId); // Проверка ID
+
+          if (nname && nname !== "") {
+               await fetch(`${api}/${userId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                         name: nname,
+                         secname: nsecn,
+                         username: nnumn,
+                         avatar: "https://cdn-icons-png.flaticon.com/512/266/266033.png",
+                         editb: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vector-icons-4/edit-flwwwz417de3u3nzvstgpu.png/edit-qtep4ftgzlsz4sl22a43m9.png?_a=DATAg1AAZAA0",
+                         delb: "https://cdn-icons-png.flaticon.com/512/6861/6861362.png"
+                    })
+               });
+
+               editd.classList.remove("show");
+               load();
+          }
+     }
+
+     load();
+
+     addb.addEventListener("click", () => {
+          addiag.classList.add("show");
+     });
+
+     confa.addEventListener("click", addcon);
+
+     confe.addEventListener("click", () => {
+          console.log("Кнопка 'Сохранить' нажата");
+          editInf();
+     });
+
+</script>
+
+</html>
