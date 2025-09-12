@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+.menutab {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+.menutab a {
+    color: #4D4D4D;
+    text-decoration: none;
+    font-weight: 500;
+}
+.menutab button {
+    background: #4CAF4F;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.reg {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.regsite {
+    width: 500px;
+}
+.regsite h1 {
+    font-size: 48px;
+    color: #4D4D4D;
+}
+.regsite span {
+    color: #4CAF4F;
+}
+.regsite p {
+    color: #717171;
+}
+.regsite button {
+    background: #4CAF4F;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+.clins {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px 0;
+}
+.clins h1 {
+    color: #4D4D4D;
+    font-size: 35px;
+}
+.clins p {
+    color: #717171;
+}
+.spons {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sitecom {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sitecom h1 {
+    color: #4D4D4D;
+    font-size: 35px;
+}
+.comm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    padding: 30px 0;
+}
+.box {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgb(208, 208, 208);
+    text-align: center;
+    font-size: 14px;
+}
+.box h1 {
+    color: #4D4D4D;
+}
+.box p {
+    color: #717171;
+}
+.leans {
+    padding: 20px 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lensite {
+    width: 600px;
+}
+.lensite h1 {
+    font-size: 36px;
+    color: #4D4D4D;
+}
+.lensite p {
+    color: #717171;
+}
+.lensite button {
+    background: #4CAF4F;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
