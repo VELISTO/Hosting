@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+}
+:root {
+  --bg: whitesmoke;
+  --col: black;
+  --pan: white;
+  --bshadow: 0 0 5px rgb(212, 212, 212);
+}
+.dark {
+  --bg: black;
+  --col: white;
+  --pan: gray;
+  --bshadow: 0 0 5px rgb(212, 212, 212);
+}
+body {
+  background-color: var(--bg);
+  color: var(--col);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.con {
+  width: 480px;
+  background-color: var(--pan);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--bshadow);
+  line-height: 30px;
+}
+h2 {
+  font-family: monospace;
+}
+span {
+  color: yellow;
+}
+h1 {
+  text-align: center;
+  font-size: 100px;
+  line-height: 150px;
+}
